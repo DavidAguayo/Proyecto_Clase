@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.proyecto.proyecto_clase.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <Button
+                android:text="DIETAS"
+                android:layout_width="match_parent"
+                android:id="@+id/DIETAS"
+                android:background="@drawable/vegetales1"
+                android:layout_weight="0.20"
+                android:layout_height="100dp"
+                android:textColor="@android:color/background_light"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:fontFamily="casual"
+                android:textSize="36sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <Button
+                android:text="EJERCICIOS"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/EJERCICIOS"
+                android:layout_weight="1"
+                android:background="@drawable/fitness"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="36sp"
+                android:fontFamily="casual"
+                android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:text="Iniciar sesión"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/login"
+        android:backgroundTint="@android:color/holo_green_light" />
+
+</RelativeLayout>

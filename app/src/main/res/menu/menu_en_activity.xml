@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item android:id="@+id/configuracion"
+        android:title="Configuracion"
+        android:icon="@android:drawable/ic_menu_preferences"/>
+    <item android:id="@+id/info"
+        android:title="Ingredientes"
+        android:icon="@android:drawable/ic_menu_info_details"/>
+    <item android:id="@+id/menu_buscar"
+        android:title="Buscar"
+        android:icon="@android:drawable/ic_menu_search"/>
+</menu>
