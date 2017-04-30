@@ -2,6 +2,7 @@ package com.proyecto.proyecto_clase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,6 +38,15 @@ public class Listadietas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dietas);
 
+        FloatingActionButton fab;
+        fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Listadietas.this, Recetas.class);
+                startActivity(intent);
+            }
+        });
         Button diet;
         diet = (Button)findViewById(R.id.button3);
         diet.setOnClickListener(new View.OnClickListener() {
