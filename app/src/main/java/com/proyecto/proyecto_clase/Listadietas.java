@@ -33,7 +33,7 @@ public class Listadietas extends AppCompatActivity {
     private List<DietasLista> dietas_item;
     private DietasAdapter dietasAdapter;
 
-    String[] nombre = {"Dieta1", "Dieta2"};
+    String[] nombre = {"HIPERPROTEICA BLANDA", "Dieta2"};
 
     int[] img = {
             R.drawable.d1,
@@ -44,16 +44,6 @@ public class Listadietas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dietas);
-
-        FloatingActionButton fab;
-        fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Listadietas.this, Recetas.class);
-                startActivity(intent);
-            }
-        });
 
         //Lo que viene a continuación sirve para hacer lo del recycler view
         drecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -80,9 +70,11 @@ public class Listadietas extends AppCompatActivity {
         drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(Listadietas.this, Dietas.class);
-                startActivity(intent);
                 Toast.makeText(Listadietas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
+                if(position==0){
+                    Intent intent = new Intent(Listadietas.this, Dietas.class);
+                    startActivity(intent);
+                }
             }
         }));
 
@@ -110,6 +102,11 @@ public class Listadietas extends AppCompatActivity {
         }
         if(id==R.id.info){
             Intent i = new Intent(this, Alimentos.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.rece){
+            Intent i = new Intent(this, Recetas.class);
             startActivity(i);
             return true;
         }

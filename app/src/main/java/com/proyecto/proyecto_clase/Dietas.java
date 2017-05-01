@@ -96,6 +96,11 @@ public class Dietas extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if(id==R.id.rece){
+            Intent i = new Intent(this, Recetas.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(opcion_menu);
 
         /*switch (opcion_menu.getItemId()) {

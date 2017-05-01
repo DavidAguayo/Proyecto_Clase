@@ -22,7 +22,7 @@ public class Recetas extends AppCompatActivity {
     private List<RecetasLista> recetas_item;
     private RecetasAdapter recetasAdapter;
 
-
+    String[] nombre = {"HIPERPROTEICA BLANDA", "Dieta2"};
     int[] img = {
             R.drawable.receta1,
             R.drawable.receta2
@@ -46,7 +46,7 @@ public class Recetas extends AppCompatActivity {
         recetas_item = new ArrayList<>();
 
         for(int i = 0; i<img.length; i++){
-            RecetasLista recetas = new RecetasLista(img[i]);
+            RecetasLista recetas = new RecetasLista(nombre[i], img[i]);
             recetas_item.add(recetas);
         }
         recetasAdapter = new RecetasAdapter(recetas_item);

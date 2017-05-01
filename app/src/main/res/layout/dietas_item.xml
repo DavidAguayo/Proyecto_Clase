@@ -22,7 +22,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/nombre"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="36sp"
+                    android:fontFamily="casual"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center" />
 
                 <ImageView
                     android:layout_width="match_parent"
