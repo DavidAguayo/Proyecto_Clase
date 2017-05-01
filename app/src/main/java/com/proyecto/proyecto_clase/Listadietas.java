@@ -6,6 +6,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -76,5 +78,41 @@ public class Listadietas extends AppCompatActivity {
         drecyclerView.setAdapter(dietasAdapter);
         dietasAdapter.notifyDataSetChanged();
 
+    }
+
+    //Este método nos dirige a otra actividad
+    public void ejecutar_info(View view){
+        Intent i = new Intent(this, SettingsActivity.class);
+        startActivity(i);
+    }
+    //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
+    //que ejecutan cada opción
+    @Override
+    public boolean onCreateOptionsMenu(Menu mimenu){
+        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem opcion_menu){
+        int id=opcion_menu.getItemId();
+        if(id==R.id.configuracion){
+            ejecutar_info(null);
+            return true;
+        }
+        if(id==R.id.info){
+            Intent i = new Intent(this, Alimentos.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(opcion_menu);
+
+        /*switch (opcion_menu.getItemId()) {
+            case android.R.id.home: //hago un case por si en un futuro agrego mas opciones
+                Log.i("ActionBar", "Atrás!");
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(opcion_menu);
+        }*/
     }
 }
