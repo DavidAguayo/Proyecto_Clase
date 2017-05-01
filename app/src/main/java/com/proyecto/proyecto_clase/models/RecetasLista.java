@@ -7,9 +7,11 @@ package com.proyecto.proyecto_clase.models;
 public class RecetasLista {
     private String nombre;
     private int img;
-    public RecetasLista(String nombre, int img){
+    private String elaborar;
+    public RecetasLista(String nombre, int img, String elaborar){
         this.nombre=nombre;
         this.img=img;
+        this.elaborar=elaborar;
     }
     public String getNombre(){return nombre;}
     public  void setNombre(String nombre){this.nombre=nombre;}
@@ -17,8 +19,10 @@ public class RecetasLista {
     public int getImg() {
         return img;
     }
-
     public void setImg(int img) {
         this.img = img;
     }
+
+    public String getElaborar(){return elaborar;}
+    public  void setElaborar(String elaborar){this.elaborar=elaborar;}
 }

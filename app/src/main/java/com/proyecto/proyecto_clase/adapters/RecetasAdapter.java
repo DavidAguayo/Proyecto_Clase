@@ -21,11 +21,13 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView nombreReceta;
         public ImageView recetasImg;
+        public TextView elaboracion;
 
         public ViewHolder(View v){
             super(v);
             nombreReceta=(TextView)v.findViewById(R.id.nomrec);
             recetasImg=(ImageView)v.findViewById(R.id.recetasimg);
+            elaboracion=(TextView)v.findViewById(R.id.elabora);
         }
     }
 
@@ -44,6 +46,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
         RecetasLista recetas = recetasList.get(position);
         holder.nombreReceta.setText(String.valueOf(recetas.getNombre()));
         holder.recetasImg.setImageResource(recetas.getImg());
+        holder.elaboracion.setText(String.valueOf(recetas.getElaborar()));
     }
 
     @Override

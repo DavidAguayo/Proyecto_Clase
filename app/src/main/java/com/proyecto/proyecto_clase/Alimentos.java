@@ -31,5 +31,7 @@ public class Alimentos extends AppCompatActivity {
 
         tabs.setCurrentTab(0);
         //Hasta aquí es lo de las tabs
+
+
     }
 }
