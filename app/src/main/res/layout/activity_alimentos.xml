@@ -123,102 +123,11 @@
                                 android:textSize="18sp"
                                 android:checked="true" />
 
-                            <Switch
-                                android:text="Switch"
+                            <TextView
+                                android:text="TextView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/switch7"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch8"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch9"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch10"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch11"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch12"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch13"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch14"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch15"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch16"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch17"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch18"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch19"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Switch"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch20"
+                                android:id="@+id/prueba"
                                 android:layout_weight="1" />
                         </LinearLayout>
                     </android.support.v4.widget.NestedScrollView>
