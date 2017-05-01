@@ -6,14 +6,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.proyecto.proyecto_clase.adapters.DietasAdapter;
 import com.proyecto.proyecto_clase.models.DietasLista;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,15 +54,6 @@ public class Listadietas extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button diet;
-        diet = (Button)findViewById(R.id.button3);
-        diet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Listadietas.this, Dietas.class);
-                startActivity(intent);
-            }
-        });
 
         //Lo que viene a continuación sirve para hacer lo del recycler view
         drecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -80,7 +75,19 @@ public class Listadietas extends AppCompatActivity {
         drecyclerView.setAdapter(dietasAdapter);
         dietasAdapter.notifyDataSetChanged();
 
+        //Lo que viene a continuación sirve para dirigir a otra actividad al pulsar sobre
+        //un cardview
+        drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(Listadietas.this, Dietas.class);
+                startActivity(intent);
+                Toast.makeText(Listadietas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
+            }
+        }));
+
     }
+
 
     //Este método nos dirige a otra actividad
     public void ejecutar_info(View view){
