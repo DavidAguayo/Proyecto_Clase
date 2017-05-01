@@ -22,6 +22,7 @@ import java.util.List;
  */
 
 public class Listadietas extends AppCompatActivity {
+    //Variables pra lo del recycler view
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
 
@@ -59,6 +60,7 @@ public class Listadietas extends AppCompatActivity {
             }
         });
 
+        //Lo que viene a continuación sirve para hacer lo del recycler view
         drecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         if(drecyclerView != null){
             drecyclerView.setHasFixedSize(true);
@@ -105,14 +107,5 @@ public class Listadietas extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(opcion_menu);
-
-        /*switch (opcion_menu.getItemId()) {
-            case android.R.id.home: //hago un case por si en un futuro agrego mas opciones
-                Log.i("ActionBar", "Atrás!");
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(opcion_menu);
-        }*/
     }
 }
