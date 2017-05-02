@@ -78,6 +78,8 @@ public class Listadietas extends AppCompatActivity {
             }
         }));
 
+        //Para poner el título al action bar:
+        getSupportActionBar().setTitle("Lista de dietas");
     }
 
 
