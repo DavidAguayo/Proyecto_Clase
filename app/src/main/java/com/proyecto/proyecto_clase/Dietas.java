@@ -68,6 +68,8 @@ public class Dietas extends AppCompatActivity {
         tabs.setCurrentTab(0);
         //Hasta aquí es lo de las tabs
 
+        //Para poner el título al action bar:
+        getSupportActionBar().setTitle("Lista de dietas");
         //getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

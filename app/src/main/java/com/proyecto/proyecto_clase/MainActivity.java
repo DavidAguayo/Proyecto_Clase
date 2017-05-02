@@ -41,5 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+
+        //Para ocultar el action bar:
+        getSupportActionBar().hide();
     }
 }

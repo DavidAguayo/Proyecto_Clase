@@ -43,5 +43,8 @@ public class Alimentos extends AppCompatActivity {
         if(s1.isChecked()==false){
             textView.setText("Acedera");
         }
+
+        //Para poner el título al action bar:
+        getSupportActionBar().setTitle("Ingredientes");
     }
 }
