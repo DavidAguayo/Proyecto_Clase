@@ -72,5 +72,7 @@ public class Recetas extends AppCompatActivity {
         drecyclerView.setAdapter(recetasAdapter);
         recetasAdapter.notifyDataSetChanged();
 
+        //Para poner el título al action bar:
+        getSupportActionBar().setTitle("Recetas");
     }
 }
