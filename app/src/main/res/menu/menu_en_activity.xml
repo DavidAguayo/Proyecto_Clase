@@ -6,7 +6,10 @@
         android:title="Configuracion"
         android:icon="@android:drawable/ic_menu_preferences"/>
     <item android:id="@+id/info"
-        android:title="Ingredientes"
+    android:title="Ingredientes"
+    android:icon="@android:drawable/ic_menu_info_details"/>
+    <item android:id="@+id/rece"
+        android:title="Recetas"
         android:icon="@android:drawable/ic_menu_info_details"/>
     <item android:id="@+id/menu_buscar"
         android:title="Buscar"

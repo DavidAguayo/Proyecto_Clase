@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Dietas.class);
+                Intent intent = new Intent(MainActivity.this, Listadietas.class);
                 startActivity(intent);
             }
         });
@@ -41,5 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+
+        //Para ocultar el action bar:
+        getSupportActionBar().hide();
     }
 }
