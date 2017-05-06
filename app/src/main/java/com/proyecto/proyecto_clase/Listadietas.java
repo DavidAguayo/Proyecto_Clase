@@ -26,6 +26,11 @@ import java.util.List;
  */
 
 public class Listadietas extends AppCompatActivity {
+    //Variables para compartir datos entre actividades a través del intent
+    private int[] imagen = new int[]{R.drawable.dieta1_1};
+    private String[] nomDieta = new String[]{"Hiperproteica blanda"};
+
+
     //Variables pra lo del recycler view
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
@@ -73,6 +78,8 @@ public class Listadietas extends AppCompatActivity {
                 Toast.makeText(Listadietas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
                 if(position==0){
                     Intent intent = new Intent(Listadietas.this, Dietas.class);
+                    intent.putExtra("imagen", imagen[0]);
+                    intent.putExtra("nombre", nomDieta[0]);
                     startActivity(intent);
                 }
             }

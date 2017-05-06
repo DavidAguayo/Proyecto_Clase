@@ -33,7 +33,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".Listadietas" />
-        <activity android:name=".Recetas"></activity>
+        <activity android:name=".Recetas" />
+        <activity android:name=".InfoReceta"></activity>
     </application>
 
 </manifest>
