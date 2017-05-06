@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.proyecto.proyecto_clase.adapters.RecetasAdapter;
@@ -71,6 +72,23 @@ public class Recetas extends AppCompatActivity {
         recetasAdapter = new RecetasAdapter(recetas_item);
         drecyclerView.setAdapter(recetasAdapter);
         recetasAdapter.notifyDataSetChanged();
+
+
+        //Lo que viene a continuación sirve para dirigir a otra actividad al pulsar sobre
+        //un cardview
+        drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                //Toast.makeText(Recetas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
+                if(position==0){
+                    Intent intent = new Intent(Recetas.this, InfoReceta.class);
+                    intent.putExtra("imagen", img[0]);
+                    intent.putExtra("nombre", nombre[0]);
+                    intent.putExtra("nombre", elaborar[0]);
+                    startActivity(intent);
+                }
+            }
+        }));
 
         //Para poner el título al action bar:
         getSupportActionBar().setTitle("Recetas");
