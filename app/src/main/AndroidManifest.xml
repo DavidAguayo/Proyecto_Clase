@@ -13,17 +13,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Ejercicios"
-            android:label="@string/title_activity_ejercicios"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="com.proyecto.proyecto_clase.MAINACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Dietas" />
         <activity
             android:name=".SettingsActivity"
@@ -34,7 +37,13 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".Listadietas" />
         <activity android:name=".Recetas" />
-        <activity android:name=".InfoReceta"></activity>
+        <activity android:name=".InfoReceta" />
+        <activity android:name=".MainEjercicios" />
+        <activity
+            android:name=".MEjercicios"
+            android:label="@string/title_activity_mejercicios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainComunEjer"></activity>
     </application>
 
 </manifest>

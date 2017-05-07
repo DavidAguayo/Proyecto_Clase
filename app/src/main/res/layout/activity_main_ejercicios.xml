@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.proyecto.proyecto_clase.MainEjercicios">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/BEjercicios"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/ejercicio"
+            android:elevation="0dp"
+            android:text="Ejercicios"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            android:textStyle="normal|italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/BWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/workout"
+            android:text="Workout"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            android:textStyle="normal|italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/BRuning"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/runing"
+            android:text="Runing"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            android:textStyle="normal|italic" />
+    </LinearLayout>
+</LinearLayout>
