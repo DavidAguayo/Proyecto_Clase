@@ -3,6 +3,7 @@ package com.proyecto.proyecto_clase;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -47,6 +48,15 @@ public class Recetas extends AppCompatActivity {
                     "que no se hagan grumos."
     };
 
+    String[] resumen = {
+            "Ponemos agua en un recipiente con trozos  y espinas de pescado, cebolla, " +
+                    "puerro y zanahoria. Llevamos a ebullición dejando cocer 15 minutos " +
+                    "para conseguir...",
+            "Cortamos el ajo en filetes, ponemos a calentar el aceite en una cazuela y " +
+                    "sin dejar que se dore vertimos el pan tostado cortado en rebanadas y " +
+                    "dejamos que..."
+    };
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +71,15 @@ public class Recetas extends AppCompatActivity {
 
         dLayoutManager = new LinearLayoutManager(this);
 
+        //Si queremos usar un gridlayoutmanager
+        //dLayoutManager = new GridLayoutManager(this,2);
+
         drecyclerView.setLayoutManager(dLayoutManager);
 
         recetas_item = new ArrayList<>();
 
         for(int i = 0; i<img.length; i++){
-            RecetasLista recetas = new RecetasLista(nombre[i], img[i], elaborar[i]);
+            RecetasLista recetas = new RecetasLista(nombre[i], img[i], resumen[i]);
             recetas_item.add(recetas);
         }
         recetasAdapter = new RecetasAdapter(recetas_item);
@@ -84,7 +97,14 @@ public class Recetas extends AppCompatActivity {
                     Intent intent = new Intent(Recetas.this, InfoReceta.class);
                     intent.putExtra("imagen", img[0]);
                     intent.putExtra("nombre", nombre[0]);
-                    intent.putExtra("nombre", elaborar[0]);
+                    intent.putExtra("elaborar", elaborar[0]);
+                    startActivity(intent);
+                }
+                if(position==1){
+                    Intent intent = new Intent(Recetas.this, InfoReceta.class);
+                    intent.putExtra("imagen", img[1]);
+                    intent.putExtra("nombre", nombre[1]);
+                    intent.putExtra("elaborar", elaborar[1]);
                     startActivity(intent);
                 }
             }
