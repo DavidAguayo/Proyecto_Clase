@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
@@ -38,11 +39,12 @@ public class Listadietas extends AppCompatActivity {
     private List<DietasLista> dietas_item;
     private DietasAdapter dietasAdapter;
 
-    String[] nombre = {"HIPERPROTEICA BLANDA", "Dieta2"};
+    String[] nombre = {"HIPERPROTEICA BLANDA", "Protección gástrica","Astringente pobre en residuos"};
 
     int[] img = {
-            R.drawable.d1,
-            R.drawable.d2
+            R.drawable.hiperproteica,
+            R.drawable.proteccion,
+            R.drawable.d1
     };
 
 
@@ -56,7 +58,9 @@ public class Listadietas extends AppCompatActivity {
             drecyclerView.setHasFixedSize(true);
         }
 
-        dLayoutManager = new LinearLayoutManager(this);
+        //dLayoutManager = new LinearLayoutManager(this);
+
+        dLayoutManager = new GridLayoutManager(this,2);
 
         drecyclerView.setLayoutManager(dLayoutManager);
 
