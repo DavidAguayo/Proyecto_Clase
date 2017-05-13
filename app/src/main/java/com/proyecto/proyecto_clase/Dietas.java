@@ -85,12 +85,6 @@ public class Dietas extends AppCompatActivity {
         im1.setImageResource(imagen);
     }
 
-    //Este método nos dirige a otra actividad
-    public void ejecutar_info(View view){
-        Intent i = new Intent(this, SettingsActivity.class);
-        startActivity(i);
-    }
-
     //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
     //que ejecutan cada opción
     @Override
@@ -102,7 +96,8 @@ public class Dietas extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem opcion_menu){
         int id=opcion_menu.getItemId();
         if(id==R.id.configuracion){
-            ejecutar_info(null);
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
             return true;
         }
         if(id==R.id.info){

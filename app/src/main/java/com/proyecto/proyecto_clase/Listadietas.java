@@ -1,6 +1,7 @@
 package com.proyecto.proyecto_clase;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import com.proyecto.proyecto_clase.models.DietasLista;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.R.drawable.btn_star_big_on;
 
 /**
  * Created by Aguayo's family on 30/04/2017.
@@ -44,7 +47,7 @@ public class Listadietas extends AppCompatActivity {
     int[] img = {
             R.drawable.hiperproteica,
             R.drawable.proteccion,
-            R.drawable.d1
+            R.drawable.astringente
     };
 
 
@@ -124,5 +127,12 @@ public class Listadietas extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(opcion_menu);
+    }
+
+    //Añadimos la opción de favoritos:
+    public void clickBoton1 (View v) {
+        Button boton = (Button)
+                findViewById(R.id.favoritos);
+        boton.setBackground(Drawable.createFromPath("@android:drawable/btn_star_big_on"));
     }
 }

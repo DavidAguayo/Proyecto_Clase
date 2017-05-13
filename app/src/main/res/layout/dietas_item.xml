@@ -63,9 +63,10 @@
                 <Button
                     android:layout_width="41dp"
                     android:layout_height="34dp"
-                    android:id="@+id/button"
+                    android:id="@+id/favoritos"
                     android:background="@android:drawable/btn_star_big_off"
-                    android:gravity="end"/>
+                    android:gravity="end"
+                    android:onClick="cliclBoton1" />
 
             </LinearLayout>
 
