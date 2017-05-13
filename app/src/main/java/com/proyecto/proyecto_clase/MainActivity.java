@@ -45,35 +45,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
-        //que ejecutan cada opción
-        /*@Override
-        public boolean onCreateOptionsMenu(Menu mimenu){
-            getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
-            return true;
-        }
-        @Override
-        public boolean onOptionsItemSelected(MenuItem opcion_menu){
-            int id=opcion_menu.getItemId();
-            if(id==R.id.configuracion){
-                Intent i = new Intent(this, SettingsActivity.class);
-                startActivity(i);
-                return true;
-            }
-            if(id==R.id.info){
-                Intent i = new Intent(this, Alimentos.class);
-                startActivity(i);
-                return true;
-            }
-            if(id==R.id.rece){
-                Intent i = new Intent(this, Recetas.class);
-                startActivity(i);
-                return true;
-            }
-            return super.onOptionsItemSelected(opcion_menu);
-        }*/
-
+        //Para poner el título al action bar:
+        getSupportActionBar().setTitle("GoodEaTraining");
         //Para ocultar el action bar:
         //getSupportActionBar().hide();
+    }
+    //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
+    //que ejecutan cada opción
+    @Override
+    public boolean onCreateOptionsMenu(Menu mimenu){
+        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem opcion_menu){
+        int id=opcion_menu.getItemId();
+        if(id==R.id.configuracion){
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.info){
+            Intent i = new Intent(this, Alimentos.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.rece){
+            Intent i = new Intent(this, Recetas.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(opcion_menu);
     }
 }
