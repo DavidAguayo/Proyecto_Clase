@@ -643,10 +643,6 @@
                     app:layout_constraintRight_toRightOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
-            <TextView
-                android:id="@+id/espaciador14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

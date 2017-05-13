@@ -25,7 +25,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Predicador con Barra"
+                    android:text="Sentadillas Completas"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -37,13 +37,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="Músculo: Biceps"
+                    android:text="Músculo: Cuádriceps"
                     android:textColor="@android:color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/btpiernas1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bordes_button"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Curl  con mancuerna"
+                    android:text="Media Sentadilla"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -82,13 +82,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="Músculo: Biceps"
+                    android:text="Músculo: Cuádriceps"
                     android:textColor="@android:color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/btpiernas2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bordes_button"
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Curl en Martillo"
+                    android:text="Peso Muerto"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -128,13 +128,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="Músculo: Triceps"
+                    android:text="Músculo: Cuádriceps y Aductores"
                     android:textColor="@android:color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
                 <Button
-                    android:id="@+id/button8"
+                    android:id="@+id/btpiernas3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bordes_button"
@@ -162,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Curl con Barra"
+                    android:text="Curl Femoral"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -174,13 +174,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="Músculo: Triceps"
+                    android:text="Músculo: Isquiotibiales y Aductores"
                     android:textColor="@android:color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent" />
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/btpiernas4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bordes_button"
@@ -191,6 +191,234 @@
                     app:layout_constraintRight_toRightOf="parent"/>
 
             </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/espaciador4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bordes">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Zancadas con Barra"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Músculo: Cuádriceps y Aductores"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <Button
+                    android:id="@+id/btpiernas5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordes_button"
+                    android:text="IR"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/espaciador5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bordes">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Carro Romano"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Músculo: Cuádriceps e Isquiotibiales"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <Button
+                    android:id="@+id/btpiernas6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordes_button"
+                    android:text="IR"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/espaciador6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bordes">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text=" Elevacion de talones con barra I"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Músculo: Gemelos"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <Button
+                    android:id="@+id/btpiernas7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordes_button"
+                    android:text="IR"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/espaciador7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bordes">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Elevacion de talones con barra II"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Músculo: Gemelos"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <Button
+                    android:id="@+id/btpiernas8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordes_button"
+                    android:text="IR"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/espaciador8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bordes">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Elevacion de talon con mancuerna"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Músculo: Gemelos"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <Button
+                    android:id="@+id/btpiernas9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordes_button"
+                    android:text="IR"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+            </android.support.constraint.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
 
