@@ -57,5 +57,7 @@ public class MainEjercicios extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Para ocultar el toolbar:
         getSupportActionBar().setTitle("Tipos de ejercicios");
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 }

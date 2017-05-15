@@ -133,6 +133,11 @@ public class Listadietas extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        if(id==R.id.atras){
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(opcion_menu);
     }
 

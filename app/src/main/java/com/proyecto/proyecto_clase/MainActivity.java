@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     //que ejecutan cada opción
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        getMenuInflater().inflate(R.menu.menu_inicio, mimenu);
         return true;
     }
     @Override
@@ -73,16 +73,6 @@ public class MainActivity extends AppCompatActivity {
         int id=opcion_menu.getItemId();
         if(id==R.id.configuracion){
             Intent i = new Intent(this, SettingsActivity.class);
-            startActivity(i);
-            return true;
-        }
-        if(id==R.id.info){
-            Intent i = new Intent(this, Alimentos.class);
-            startActivity(i);
-            return true;
-        }
-        if(id==R.id.rece){
-            Intent i = new Intent(this, Recetas.class);
             startActivity(i);
             return true;
         }

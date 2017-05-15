@@ -2,6 +2,7 @@ package com.proyecto.proyecto_clase;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,12 +13,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
-public class Dietas extends AppCompatActivity {
+public class Dietas   extends  ActionBarActivity{
     //Instancia de la clase Toolbar para incluirlo:
     private Toolbar toolbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dietas);
 
@@ -86,7 +87,8 @@ public class Dietas extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Para poner el título al tool bar:
         getSupportActionBar().setTitle(nombre);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //Para poner las imágenes que hemos obtenido del intent
         im1.setImageResource(imagen);
@@ -114,6 +116,11 @@ public class Dietas extends AppCompatActivity {
         }
         if(id==R.id.rece){
             Intent i = new Intent(this, Recetas.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.atras){
+            Intent i = new Intent(this, Listadietas.class);
             startActivity(i);
             return true;
         }
