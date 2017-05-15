@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.proyecto.proyecto_clase.MAINACTIVITY" />
 
@@ -28,24 +29,34 @@
             </intent-filter>
         </activity>
         <activity android:name=".Dietas"
-            android:parentActivityName=".Listadietas">
+            android:parentActivityName=".Listadietas"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
-        <activity android:name=".Alimentos" />
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Alimentos"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".Listadietas" />
-        <activity android:name=".Recetas" />
-        <activity android:name=".InfoReceta" />
-        <activity android:name=".MainEjercicios" />
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Listadietas"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Recetas"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InfoReceta"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainEjercicios"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MEjercicios"
             android:label="@string/title_activity_mejercicios"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainComunEjer"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainComunEjer"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
