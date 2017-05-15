@@ -28,6 +28,7 @@ public class Recetas extends AppCompatActivity {
     private List<RecetasLista> recetas_item;
     private RecetasAdapter recetasAdapter;
 
+    String[] numero = {"0","1"};
     String[] nombre = {"Sopa de pescado", "Sopa de ajo"};
     int[] img = {
             R.drawable.r1,
@@ -99,6 +100,7 @@ public class Recetas extends AppCompatActivity {
                 //Toast.makeText(Recetas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
                 if(position==0){
                     Intent intent = new Intent(Recetas.this, InfoReceta.class);
+                    intent.putExtra("numero",numero[0]);
                     intent.putExtra("imagen", img[0]);
                     intent.putExtra("nombre", nombre[0]);
                     intent.putExtra("elaborar", elaborar[0]);
@@ -106,6 +108,7 @@ public class Recetas extends AppCompatActivity {
                 }
                 if(position==1){
                     Intent intent = new Intent(Recetas.this, InfoReceta.class);
+                    intent.putExtra("numero",numero[1]);
                     intent.putExtra("imagen", img[1]);
                     intent.putExtra("nombre", nombre[1]);
                     intent.putExtra("elaborar", elaborar[1]);
