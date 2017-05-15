@@ -92,6 +92,12 @@ public class Listadietas extends AppCompatActivity {
                     intent.putExtra("nombre", nomDieta[0]);
                     startActivity(intent);
                 }
+                if(position==2){
+                    Intent intent = new Intent(Listadietas.this, NavigationDrawer.class);
+                    intent.putExtra("imagen", imagen[0]);
+                    intent.putExtra("nombre", nomDieta[0]);
+                    startActivity(intent);
+                }
             }
         }));
 

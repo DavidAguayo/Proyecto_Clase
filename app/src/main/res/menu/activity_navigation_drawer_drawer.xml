@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Dietas" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Ejercicios">
+                <menu>
+                    <item
+                        android:id="@+id/nav_share2"
+                        android:icon="@drawable/ic_menu_share"
+                        android:title="Share" />
+                    <item
+                        android:id="@+id/nav_send2"
+                        android:icon="@drawable/ic_menu_send"
+                        android:title="Send" />
+                </menu>
+        </item>
+    </group>
+</menu>

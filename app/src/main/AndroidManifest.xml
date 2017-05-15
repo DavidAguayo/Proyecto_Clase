@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.proyecto.proyecto_clase.MAINACTIVITY" />
@@ -28,34 +29,45 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dietas"
+        <activity
+            android:name=".Dietas"
             android:parentActivityName=".Listadietas"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Alimentos"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Alimentos"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Listadietas"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Recetas"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".InfoReceta"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainEjercicios"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Listadietas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Recetas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoReceta"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainEjercicios"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MEjercicios"
             android:label="@string/title_activity_mejercicios"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainComunEjer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainComunEjer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
     </application>
 
