@@ -3,17 +3,19 @@ package com.proyecto.proyecto_clase;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
 public class MainEjercicios extends AppCompatActivity {
+    //Instancia de la clase Toolbar para incluirlo:
+    private Toolbar toolbar;
 
     Button BEjercicios;
     Button BWorkout;
     Button BRuning;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ejercicios);
         BEjercicios = (Button)findViewById(R.id.BEjercicios);
@@ -48,5 +50,12 @@ public class MainEjercicios extends AppCompatActivity {
                 startActivity(intentEjer);
             }
         });*/
+
+        //Para incluir el Toolbar:
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para ocultar el toolbar:
+        getSupportActionBar().setTitle("Tipos de ejercicios");
     }
 }

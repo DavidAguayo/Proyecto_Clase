@@ -3,12 +3,16 @@ package com.proyecto.proyecto_clase;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.Switch;
 import android.widget.TabHost;
 import android.widget.TextView;
 
 public class Alimentos extends AppCompatActivity {
     TextView textView;
+
+    //Instancia de la clase Toolbar para incluirlo:
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,11 @@ public class Alimentos extends AppCompatActivity {
             textView.setText("Acedera");
         }
 
-        //Para poner el título al action bar:
+        //Para incluir el Toolbar:
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Ingredientes");
     }
 }

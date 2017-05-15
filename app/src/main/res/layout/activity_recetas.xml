@@ -9,9 +9,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.proyecto.proyecto_clase.Recetas">
+    <!--Para incluir el toolbar-->
+    <include layout="@layout/tool_bar" android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"></include>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view2" />
+        android:id="@+id/recycler_view2"
+        android:paddingTop="56dp"/>
 </RelativeLayout>

@@ -10,10 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.proyecto.proyecto_clase.MainActivity">
 
+    <!--Para incluir el toolbar-->
+    <include layout="@layout/tool_bar" android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"></include>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingTop="56dp">
 
         <LinearLayout
             android:orientation="vertical"

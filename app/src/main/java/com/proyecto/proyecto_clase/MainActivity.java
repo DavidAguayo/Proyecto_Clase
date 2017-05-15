@@ -3,6 +3,7 @@ package com.proyecto.proyecto_clase;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.widget.Button;
 import static android.R.attr.button;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Instancia de la clase Toolbar para incluirlo:
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +50,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Para poner el título al action bar:
-        getSupportActionBar().setTitle("GoodEaTraining");
+        //getSupportActionBar().setTitle("GoodEaTraining");
         //Para ocultar el action bar:
         //getSupportActionBar().hide();
+
+        //Para incluir el Toolbar:
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al toolbar:
+        getSupportActionBar().setTitle("GoodEaTraining");
     }
     //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
     //que ejecutan cada opción

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +31,8 @@ import static android.R.drawable.btn_star_big_on;
  */
 
 public class Listadietas extends AppCompatActivity {
+    //Instancia de la clase Toolbar para incluirlo:
+    private Toolbar toolbar;
     //Variables para compartir datos entre actividades a través del intent
     private int[] imagen = new int[]{R.drawable.dieta1_1};
     private String[] nomDieta = new String[]{"Hiperproteica blanda"};
@@ -92,7 +95,11 @@ public class Listadietas extends AppCompatActivity {
             }
         }));
 
-        //Para poner el título al action bar:
+        //Para incluir el Toolbar:
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Lista de dietas");
     }
 

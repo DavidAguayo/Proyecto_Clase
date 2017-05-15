@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recetas extends AppCompatActivity {
+    //Instancia de la clase Toolbar para incluirlo:
+    private Toolbar toolbar;
+
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
 
@@ -110,7 +114,11 @@ public class Recetas extends AppCompatActivity {
             }
         }));
 
-        //Para poner el título al action bar:
+        //Para incluir el Toolbar:
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al tool bar:
         getSupportActionBar().setTitle("Recetas");
     }
 }

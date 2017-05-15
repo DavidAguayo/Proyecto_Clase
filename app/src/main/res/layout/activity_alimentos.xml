@@ -10,6 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.proyecto.proyecto_clase.Alimentos"
     android:orientation="vertical">
+    <!--Para incluir el toolbar-->
+    <include layout="@layout/tool_bar" android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"></include>
     <TabHost android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 
 public class Dietas extends AppCompatActivity {
+    //Instancia de la clase Toolbar para incluirlo:
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +80,11 @@ public class Dietas extends AppCompatActivity {
         tabs.setCurrentTab(0);
         //Hasta aquí es lo de las tabs
 
-        //Para poner el título al action bar:
+        //Para incluir el Toolbar:
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al tool bar:
         getSupportActionBar().setTitle(nombre);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 
