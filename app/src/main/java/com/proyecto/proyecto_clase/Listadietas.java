@@ -8,13 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.proyecto.proyecto_clase.adapters.DietasAdapter;
@@ -36,6 +40,11 @@ public class Listadietas extends AppCompatActivity {
     //Variables para compartir datos entre actividades a través del intent
     private int[] imagen = new int[]{R.drawable.dieta1_1};
     private String[] nomDieta = new String[]{"Hiperproteica blanda"};
+
+    //Para incluir la opción de búsqueda:
+    private ArrayList<String> array_sort = new ArrayList<String>();
+    int textlength = 0;
+    private String listview_array[] = {"HIPERPROTEICA BLANDA", "Protección gástrica","Astringente pobre en residuos"};
 
 
     //Variables pra lo del recycler view
@@ -63,8 +72,6 @@ public class Listadietas extends AppCompatActivity {
         if(drecyclerView != null){
             drecyclerView.setHasFixedSize(true);
         }
-
-        //dLayoutManager = new LinearLayoutManager(this);
 
         dLayoutManager = new GridLayoutManager(this,2);
 
@@ -96,10 +103,13 @@ public class Listadietas extends AppCompatActivity {
                     Intent intent = new Intent(Listadietas.this, NavigationDrawer.class);
                     intent.putExtra("imagen", imagen[0]);
                     intent.putExtra("nombre", nomDieta[0]);
-                    startActivity(intent);
+                    //startActivity(intent);
+
                 }
             }
         }));
+
+        //ImageView im = (ImageView)findViewById(R.id.dietasimg);
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
@@ -107,6 +117,15 @@ public class Listadietas extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Lista de dietas");
+
+
+
+        //Para incluir la opción de búsqueda:
+        SearchView bs = (SearchView) findViewById(R.id.menu_buscar);
+        RecyclerView rv = (RecyclerView)findViewById(R.id.recycler_view);
+        //rv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listview_array));
+
+
     }
 
 

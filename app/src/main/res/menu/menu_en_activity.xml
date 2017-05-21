@@ -16,7 +16,7 @@
         android:title="Buscar"
         android:icon="@android:drawable/ic_menu_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:orderInCategory="2"/>
     <item android:id="@+id/atras"
         android:title="Atrás"
