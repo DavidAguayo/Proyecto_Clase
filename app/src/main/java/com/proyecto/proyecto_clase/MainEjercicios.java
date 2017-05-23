@@ -59,5 +59,6 @@ public class MainEjercicios extends AppCompatActivity {
         getSupportActionBar().setTitle("Tipos de ejercicios");
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().hide();
     }
 }

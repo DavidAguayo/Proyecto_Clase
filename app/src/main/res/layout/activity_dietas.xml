@@ -9,278 +9,449 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"></include>
-        <HorizontalScrollView
+
+       <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <ScrollView
+                <TextView
+                    android:text="La dieta hiperproteica se caracteriza porque consiste en consumir sin límites aquellos alimentos que son ricos en proteínas, como los fiambres, las carnes, los embutidos, los lácteos y el huevo, pero prohíbe alimentos tan importantes para la salud como los cereales, el pan, las patatas, las legumbres, etc."
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView31"
+                    android:padding="30dp"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:text="INFORMACIÓN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView34"
+                    android:padding="10dp"
+                    android:textSize="32sp"
+                    android:textAlignment="center"
+                    android:background="@color/colorAdicional2"
+                    android:textColor="@color/cardview_light_background" />
+
+                <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="vertical" >
 
                         <TableLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="5dp">
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:background="@color/colorAccent">
-
+                            android:layout_height="wrap_content"
+                            android:padding="0dp">
                                 <TableRow
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:padding="15dp">
-
+                                    android:padding="0dp"
+                                    android:orientation="horizontal">
 
                                     <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/textView30"
-                                        android:layout_marginLeft="50dp"/>
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/textView30" />
 
                                     <TextView
                                         android:text="LUNES"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textL"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
                                     <TextView
                                         android:text="MARTES"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textM"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
                                     <TextView
                                         android:text="MIERCOLES"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textMi"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
                                     <TextView
                                         android:text="JUEVES"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textJ"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
                                     <TextView
                                         android:text="VIERNES"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textV"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
                                     <TextView
                                         android:text="SABADO"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textS"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
                                     <TextView
                                         android:text="DOMINGO"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="15dp"
                                         android:id="@+id/textD"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:background="@color/colorAdicional"/>
 
                                 </TableRow>
-                            </TableRow>
-
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:padding="0dp">
+
+
+                                <TextView
+                                    android:text="DESAYUNO"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/de"
+                                    android:background="@color/colorAdicional"
+                                    android:padding="10dp"
+                                    android:fontFamily="casual" />
+
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de1"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de2"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de3"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de4"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de5"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de6"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/de7"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+
+                            </TableRow>
                                 <TableRow
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:padding="15dp">
+                                    android:padding="0dp">
 
 
                                     <TextView
-                                        android:text="DESAYUNO"
-                                        android:layout_width="wrap_content"
+                                        android:text="COMIDA"
+                                        android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:id="@+id/de"
-                                        android:background="@color/colorAccent"/>
+                                        android:id="@+id/co"
+                                        android:background="@color/colorAdicional"
+                                        android:padding="10dp"
+                                        android:fontFamily="casual" />
 
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Puré de lentejas\nPescado con verduritas\nYogur natural"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de1"
+                                        android:id="@+id/co1"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
+
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Arroz con  verduras\nSalmón\nYogur natural"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de2"
+                                        android:id="@+id/co2"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Crema de legumbres\nTernera asada con champiñones\nArroz con leche"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de3"
+                                        android:id="@+id/co3"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Paella\nAlbóndigas\nCompota de manzana"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de4"
+                                        android:id="@+id/co4"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Crema de alubias\nUslo de pollo asado\nCompota de manzana"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de5"
+                                        android:id="@+id/co5"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Menestra de verduras\nPescado en salsa verde\nCompota de manzana"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de6"
+                                        android:id="@+id/co6"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
                                     <TextView
-                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:text="Judías verdes con patatas\nConejo a la cazadora\nFlan"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/de7"
+                                        android:id="@+id/co7"
                                         android:fontFamily="casual"
-                                        android:textSize="20sp" />
+                                        android:textSize="20sp"
+                                        android:padding="10dp"
+                                        android:background="@drawable/borde"/>
 
                                 </TableRow>
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="0dp">
+
+
+                                <TextView
+                                    android:text="MERIENDA"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/me"
+                                    android:background="@color/colorAdicional"
+                                    android:padding="10dp"
+                                    android:fontFamily="casual" />
+
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me1"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me2"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me3"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me4"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me5"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me6"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Café con leche\nGalletas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/me7"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
                             </TableRow>
-
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" />
+                                android:layout_height="match_parent"
+                                android:padding="0dp">
 
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent" />
+
+                                <TextView
+                                    android:text="CENA"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/ce"
+                                    android:background="@color/colorAdicional"
+                                    android:padding="10dp"
+                                    android:fontFamily="casual" />
+
+                                <TextView
+                                    android:text="Crema de zanahorias\nTortilla de jamón york\nCompota de manzana"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce1"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+
+                                <TextView
+                                    android:text="Sopa de estrellas\nMerluza al horno\nCompota de manzana"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce2"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Sopa de verduras\nLenguado menier\nNatillas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce3"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Crema de guisantes\nBacalao ajoarriero\nYogur natural"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce4"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Sopa de pescado\nPescado al horno con guarnición\nNatillas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce5"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Sopa de ajo\nLomos de cabracho\nYogur de sabores"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce6"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                                <TextView
+                                    android:text="Crema de calabacín\nPavo en salsa\nYogur natural"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/ce7"
+                                    android:fontFamily="casual"
+                                    android:textSize="20sp"
+                                    android:padding="10dp"
+                                    android:background="@drawable/borde"/>
+                            </TableRow>
                         </TableLayout>
-
-                        <Button
-                            android:text="Button"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/button2" />
-
-                        <Button
-                            android:text="Button"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/button" />
+                    </LinearLayout>
+                    </HorizontalScrollView>
                     </LinearLayout>
                 </ScrollView>
-            </LinearLayout>
-        </HorizontalScrollView>
 </LinearLayout>
-
-<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:tabMode="scrollable">
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab1"
-                android:text="Lunes" />
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab2"
-                android:text="Martes" />
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab3"
-                android:text="Miércoles" />
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab4"
-                android:text="Jueves" />
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab5"
-                android:text="Viernes" />
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab6"
-                android:text="Sábado" />
-
-            <android.support.design.widget.TabItem
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/tab7"
-                android:text="Domingo" />
-        </android.support.design.widget.TabLayout>
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
-
-        <RelativeLayout
-            android:id="@+id/activity_dietas"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            tools:context="com.proyecto.proyecto_clase.Dietas">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/dieta1_1"
-                android:id="@+id/imageView3"
-                android:adjustViewBounds="true" />
-        </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
-</android.support.design.widget.CoordinatorLayout>-->

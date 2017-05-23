@@ -98,7 +98,7 @@ public class Dietas   extends  ActionBarActivity{
     //que ejecutan cada opción
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
         return true;
     }
     @Override

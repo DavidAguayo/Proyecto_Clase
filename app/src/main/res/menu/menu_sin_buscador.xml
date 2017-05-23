@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+    <item android:id="@+id/configuracion"
+        android:title="Configuracion"
+        android:icon="@android:drawable/ic_menu_preferences"/>
+    <item android:id="@+id/info"
+        android:title="Ingredientes"
+        android:icon="@android:drawable/ic_menu_info_details"/>
+    <item android:id="@+id/rece"
+        android:title="Recetas"
+        android:icon="@android:drawable/ic_menu_info_details"/>
+    <item android:id="@+id/atras"
+        android:title="Atrás"
+        android:icon="@android:drawable/ic_menu_revert"
+        app:showAsAction="always"
+        android:orderInCategory="1"/>
+</menu>
