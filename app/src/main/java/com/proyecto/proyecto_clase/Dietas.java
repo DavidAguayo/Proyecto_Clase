@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class Dietas   extends  ActionBarActivity{
     //Instancia de la clase Toolbar para incluirlo:
@@ -22,64 +23,42 @@ public class Dietas   extends  ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dietas);
 
-        //Variables para poder colocar las imágenes que obtenemos en el intent
-        //en los imageview correspondientes
-        //ImageView im1 = (ImageView)findViewById(R.id.imageView3);
         //Para recoger la información que hemos pasado por los intent
         Intent i = getIntent();
-        int imagen = i.getIntExtra("imagen", 0);
         String nombre = i.getStringExtra("nombre");
+        String infor = i.getStringExtra("info");
 
-        //Lo que viene a continuación es para las pestañas(tabs)
-        /*Resources res = getResources();
-
-        TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
-        tabs.setup();
-
-        TabHost.TabSpec spec=tabs.newTabSpec("mitab1");
-        spec.setContent(R.id.tab1);
-        spec.setIndicator("LUNES",
-                res.getDrawable(android.R.drawable.ic_btn_speak_now));
-        tabs.addTab(spec);
-
-        spec=tabs.newTabSpec("mitab2");
-        spec.setContent(R.id.tab2);
-        spec.setIndicator("MARTES",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        spec=tabs.newTabSpec("mitab3");
-        spec.setContent(R.id.tab3);
-        spec.setIndicator("MIERCOLES",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        spec=tabs.newTabSpec("mitab4");
-        spec.setContent(R.id.tab4);
-        spec.setIndicator("JUEVES",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        spec=tabs.newTabSpec("mitab5");
-        spec.setContent(R.id.tab5);
-        spec.setIndicator("VIERNES",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        spec=tabs.newTabSpec("mitab6");
-        spec.setContent(R.id.tab6);
-        spec.setIndicator("SABADO",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        spec=tabs.newTabSpec("mitab7");
-        spec.setContent(R.id.tab7);
-        spec.setIndicator("DOMINGO",
-                res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        tabs.setCurrentTab(0);*/
-        //Hasta aquí es lo de las tabs
+        //Para usar la información recogida del intent
+        TextView informacion = (TextView)findViewById(R.id.info);
+        informacion.setText(infor);
+        TextView des1 = (TextView)findViewById(R.id.de1);
+        TextView des2 = (TextView)findViewById(R.id.de2);
+        TextView des3 = (TextView)findViewById(R.id.de3);
+        TextView des4 = (TextView)findViewById(R.id.de4);
+        TextView des5 = (TextView)findViewById(R.id.de5);
+        TextView des6 = (TextView)findViewById(R.id.de6);
+        TextView des7 = (TextView)findViewById(R.id.de7);
+        TextView co1 = (TextView)findViewById(R.id.co1);
+        TextView co2 = (TextView)findViewById(R.id.co2);
+        TextView co3 = (TextView)findViewById(R.id.co3);
+        TextView co4 = (TextView)findViewById(R.id.co4);
+        TextView co5 = (TextView)findViewById(R.id.co5);
+        TextView co6 = (TextView)findViewById(R.id.co6);
+        TextView co7 = (TextView)findViewById(R.id.co7);
+        TextView me1 = (TextView)findViewById(R.id.me1);
+        TextView me2 = (TextView)findViewById(R.id.me2);
+        TextView me3 = (TextView)findViewById(R.id.me3);
+        TextView me4 = (TextView)findViewById(R.id.me4);
+        TextView me5 = (TextView)findViewById(R.id.me5);
+        TextView me6 = (TextView)findViewById(R.id.me6);
+        TextView me7 = (TextView)findViewById(R.id.me7);
+        TextView ce1 = (TextView)findViewById(R.id.ce1);
+        TextView ce2 = (TextView)findViewById(R.id.ce2);
+        TextView ce3 = (TextView)findViewById(R.id.ce3);
+        TextView ce4 = (TextView)findViewById(R.id.ce4);
+        TextView ce5 = (TextView)findViewById(R.id.ce5);
+        TextView ce6 = (TextView)findViewById(R.id.ce6);
+        TextView ce7 = (TextView)findViewById(R.id.ce7);
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
@@ -87,11 +66,6 @@ public class Dietas   extends  ActionBarActivity{
         setSupportActionBar(toolbar);
         //Para poner el título al tool bar:
         getSupportActionBar().setTitle(nombre);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        //Para poner las imágenes que hemos obtenido del intent
-        //im1.setImageResource(imagen);
     }
 
     //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones

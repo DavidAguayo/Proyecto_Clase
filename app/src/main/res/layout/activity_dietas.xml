@@ -23,7 +23,7 @@
                     android:text="La dieta hiperproteica se caracteriza porque consiste en consumir sin límites aquellos alimentos que son ricos en proteínas, como los fiambres, las carnes, los embutidos, los lácteos y el huevo, pero prohíbe alimentos tan importantes para la salud como los cereales, el pan, las patatas, las legumbres, etc."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView31"
+                    android:id="@+id/info"
                     android:padding="30dp"
                     android:textSize="18sp" />
 
@@ -234,7 +234,7 @@
                                         android:background="@drawable/borde"/>
 
                                     <TextView
-                                        android:text="Arroz con  verduras\nSalmón\nYogur natural"
+                                        android:text="Arroz con verduras\nSalmón\nYogur natural"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/co2"

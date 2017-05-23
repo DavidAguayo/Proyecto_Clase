@@ -37,14 +37,11 @@ import static android.R.drawable.btn_star_big_on;
 public class Listadietas extends AppCompatActivity {
     //Instancia de la clase Toolbar para incluirlo:
     private Toolbar toolbar;
-    //Variables para compartir datos entre actividades a través del intent
-    private int[] imagen = new int[]{R.drawable.dieta1_1};
-    private String[] nomDieta = new String[]{"Hiperproteica blanda"};
 
     //Para incluir la opción de búsqueda:
-    private ArrayList<String> array_sort = new ArrayList<String>();
+    /*private ArrayList<String> array_sort = new ArrayList<String>();
     int textlength = 0;
-    private String listview_array[] = {"HIPERPROTEICA BLANDA", "Protección gástrica","Astringente pobre en residuos"};
+    private String listview_array[] = {"Hiperproteica blanda", "Protección gástrica","Astringente pobre en residuos"};*/
 
 
     //Variables pra lo del recycler view
@@ -54,14 +51,20 @@ public class Listadietas extends AppCompatActivity {
     private List<DietasLista> dietas_item;
     private DietasAdapter dietasAdapter;
 
-    String[] nombre = {"HIPERPROTEICA BLANDA", "Protección gástrica","Astringente pobre en residuos"};
+    String[] nombre = {"Hiperproteica blanda", "Protección gástrica","Astringente pobre en residuos","Dieta\nlíquida"};
 
     int[] img = {
             R.drawable.hiperproteica,
             R.drawable.proteccion,
-            R.drawable.astringente
+            R.drawable.astringente,
+            R.drawable.dietaliquida
     };
 
+    //Variables para compartir datos entre actividades a través del intent
+    String[] informacion = {"La dieta hiperproteica se caracteriza porque consiste en consumir sin límites aquellos alimentos que son ricos en proteínas, como los fiambres, las carnes, los embutidos, los lácteos y el huevo, pero prohíbe alimentos tan importantes para la salud como los cereales, el pan, las patatas, las legumbres, etc.",
+        "La función principal de una dieta de protección gástrica es mantener el estómago en un estado de semireposo funcional, por lo cual se recomienda hacer comidas pequeñas, pero frecuentes, a base de alimentos blandos. En esta dieta evitaremos también ciertos alimentos irritantes de la mucosa gástrica y privilegiaremos en tanto, otros alimentos beneficiosos para el sistema gastrointestinal.",
+        "",
+        "Una dieta líquida es aquella que no contiene alimentos sólidos, prescritas normalmente para enfermedades gastrointestinales o antes o después de ciertos tipos de cirugía, como la cirugía oral y del tracto gastrointestinal."};
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,17 +98,25 @@ public class Listadietas extends AppCompatActivity {
                 Toast.makeText(Listadietas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
                 if(position==0){
                     Intent intent = new Intent(Listadietas.this, Dietas.class);
-                    intent.putExtra("imagen", imagen[0]);
-                    intent.putExtra("nombre", nomDieta[0]);
+                    intent.putExtra("nombre", nombre[0]);
+                    intent.putExtra("info", informacion[0]);
                     startActivity(intent);
                 }
                 if(position==1){
-                    //clickBoton1(view);
+                    Intent intent = new Intent(Listadietas.this, Dietas.class);
+                    intent.putExtra("nombre", nombre[1]);
+                    intent.putExtra("info", informacion[1]);
+                    startActivity(intent);
                 }
                 if(position==2){
                     Intent intent = new Intent(Listadietas.this, NavigationDrawer.class);
-                    intent.putExtra("imagen", imagen[0]);
-                    intent.putExtra("nombre", nomDieta[0]);
+                    intent.putExtra("nombre", nombre[0]);
+                    startActivity(intent);
+                }
+                if(position==3){
+                    Intent intent = new Intent(Listadietas.this, Dietas.class);
+                    intent.putExtra("nombre", nombre[3]);
+                    intent.putExtra("info", informacion[3]);
                     startActivity(intent);
                 }
             }
