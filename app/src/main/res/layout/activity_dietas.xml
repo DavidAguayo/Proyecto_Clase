@@ -9,130 +9,193 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"></include>
-    <TabHost android:id="@android:id/tabhost"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
-            <HorizontalScrollView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fillViewport="false">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TabWidget android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@android:id/tabs" />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <FrameLayout android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@android:id/tabcontent" >
+                android:orientation="vertical" >
 
-                <LinearLayout android:id="@+id/tab1"
-                    android:orientation="vertical"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@drawable/dieta1_1"
-                        android:id="@+id/imageView3" />
-
-                </LinearLayout>
-
-                <LinearLayout android:id="@+id/tab2"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/dieta1_2"
-                        android:id="@+id/imageView7"
-                        android:adjustViewBounds="true" />
+                        android:orientation="vertical" >
 
-                </LinearLayout>
-                <LinearLayout android:id="@+id/tab3"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="5dp">
 
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:background="@color/colorAccent">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/dieta1_3"
-                        android:id="@+id/imageView"
-                        android:adjustViewBounds="true" />
-                </LinearLayout>
-                <LinearLayout android:id="@+id/tab4"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="15dp">
 
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/dieta1_4"
-                        android:id="@+id/imageView2"
-                        android:adjustViewBounds="true" />
-                </LinearLayout>
-                <LinearLayout android:id="@+id/tab5"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textView30"
+                                        android:layout_marginLeft="50dp"/>
+
+                                    <TextView
+                                        android:text="LUNES"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textL"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="MARTES"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textM"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="MIERCOLES"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textMi"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="JUEVES"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textJ"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="VIERNES"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textV"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="SABADO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textS"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="DOMINGO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/textD"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+
+                                </TableRow>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="15dp">
 
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/dieta1_5"
-                        android:id="@+id/imageView4"
-                        android:adjustViewBounds="true" />
-                </LinearLayout>
-                <LinearLayout android:id="@+id/tab6"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                                    <TextView
+                                        android:text="DESAYUNO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:id="@+id/de"
+                                        android:background="@color/colorAccent"/>
 
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de1"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de2"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de3"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de4"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de5"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de6"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
+                                    <TextView
+                                        android:text="Leche, azúcar\nClara huevo\nTostadas\nJamón York"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/de7"
+                                        android:fontFamily="casual"
+                                        android:textSize="20sp" />
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/dieta1_6"
-                        android:id="@+id/imageView5"
-                        android:adjustViewBounds="true" />
-                </LinearLayout>
-                <LinearLayout android:id="@+id/tab7"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                                </TableRow>
+                            </TableRow>
 
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/dieta1_7"
-                        android:id="@+id/imageView6"
-                        android:adjustViewBounds="true" />
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </TableLayout>
+
+                        <Button
+                            android:text="Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/button2" />
+
+                        <Button
+                            android:text="Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/button" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </HorizontalScrollView>
 </LinearLayout>
 
 <!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"

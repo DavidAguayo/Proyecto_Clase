@@ -24,14 +24,14 @@ public class Dietas   extends  ActionBarActivity{
 
         //Variables para poder colocar las imágenes que obtenemos en el intent
         //en los imageview correspondientes
-        ImageView im1 = (ImageView)findViewById(R.id.imageView3);
+        //ImageView im1 = (ImageView)findViewById(R.id.imageView3);
         //Para recoger la información que hemos pasado por los intent
         Intent i = getIntent();
         int imagen = i.getIntExtra("imagen", 0);
         String nombre = i.getStringExtra("nombre");
 
         //Lo que viene a continuación es para las pestañas(tabs)
-        Resources res = getResources();
+        /*Resources res = getResources();
 
         TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
         tabs.setup();
@@ -78,7 +78,7 @@ public class Dietas   extends  ActionBarActivity{
                 res.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
-        tabs.setCurrentTab(0);
+        tabs.setCurrentTab(0);*/
         //Hasta aquí es lo de las tabs
 
         //Para incluir el Toolbar:
@@ -91,7 +91,7 @@ public class Dietas   extends  ActionBarActivity{
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //Para poner las imágenes que hemos obtenido del intent
-        im1.setImageResource(imagen);
+        //im1.setImageResource(imagen);
     }
 
     //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
