@@ -17,7 +17,8 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -54,15 +55,13 @@
                     app:layout_constraintRight_toRightOf="parent" />
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView6"
@@ -100,15 +99,13 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -146,15 +143,13 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView8"
@@ -191,14 +186,12 @@
                     app:layout_constraintRight_toRightOf="parent"/>
 
             </android.support.constraint.ConstraintLayout>
-            <TextView
-                android:id="@+id/espaciador4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView10"
@@ -235,15 +228,13 @@
                     app:layout_constraintRight_toRightOf="parent" />
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView12"
@@ -281,15 +272,13 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView14"
@@ -327,15 +316,13 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bordes">
+                android:background="@drawable/bordes"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:id="@+id/textView16"
@@ -373,10 +360,7 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/espaciador8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
