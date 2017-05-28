@@ -6,9 +6,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.proyecto.proyecto_clase.Dietas;
 import com.proyecto.proyecto_clase.R;
 import com.proyecto.proyecto_clase.models.DietasLista;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +18,7 @@ import java.util.List;
  */
 
 public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder>{
-    private List<DietasLista> dietasList;
+    ArrayList<DietasLista> dietasList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView nombreDieta;
@@ -29,7 +31,7 @@ public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder
         }
     }
 
-    public DietasAdapter(List<DietasLista> dietasList){this.dietasList = dietasList;}
+    public DietasAdapter(ArrayList<DietasLista> dietasList){this.dietasList = dietasList;}
 
     @Override
     public DietasAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -49,5 +51,12 @@ public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return dietasList.size();
+    }
+
+    //Para introducir la opción de búsqueda:
+    public void setFilter(ArrayList<DietasLista> newList){
+        dietasList = new ArrayList<>();
+        dietasList.addAll(newList);
+        notifyDataSetChanged();
     }
 }

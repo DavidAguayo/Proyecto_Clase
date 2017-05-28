@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,7 +35,7 @@ import static android.R.drawable.btn_star_big_on;
  * Created by Aguayo's family on 30/04/2017.
  */
 
-public class Listadietas extends AppCompatActivity {
+public class Listadietas extends AppCompatActivity implements SearchView.OnQueryTextListener{
     //Instancia de la clase Toolbar para incluirlo:
     private Toolbar toolbar;
 
@@ -48,7 +49,7 @@ public class Listadietas extends AppCompatActivity {
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
 
-    private List<DietasLista> dietas_item;
+    private ArrayList<DietasLista> dietas_item;
     private DietasAdapter dietasAdapter;
 
     String[] nombre = {"Hiperproteica blanda", "Protección gástrica","Astringente pobre en residuos","Dieta\nlíquida","Sin\ngluten","Ovo-lacto-vegetariana","Blanda sin lácteos","Control\ncolesterol"};
@@ -176,6 +177,10 @@ public class Listadietas extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
         getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        //Para introducir la opción de búsqueda;
+        MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
+        SearchView searchView =(SearchView) MenuItemCompat.getActionView(menuItem);
+        searchView.setOnQueryTextListener(this);
         return true;
     }
     @Override
@@ -238,6 +243,26 @@ public class Listadietas extends AppCompatActivity {
         intent.putExtra("cenas6", cenas[i][5]);
         intent.putExtra("cenas7", cenas[i][6]);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        newText = newText.toLowerCase();
+        ArrayList<DietasLista> newList = new ArrayList<>();
+        for(DietasLista dietas : dietas_item)
+        {
+            String name = dietas.getNombre().toLowerCase();
+            if(name.contains(newText)){
+                newList.add(dietas);
+            }
+        }
+        dietasAdapter.setFilter(newList);
+        return false;
     }
 
 
