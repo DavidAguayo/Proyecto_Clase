@@ -27,6 +27,22 @@ public class Dietas   extends  ActionBarActivity{
         Intent i = getIntent();
         String nombre = i.getStringExtra("nombre");
         String infor = i.getStringExtra("info");
+        String d1 = i.getStringExtra("desayunos1");
+        String d2 = i.getStringExtra("desayunos2");
+        String d3 = i.getStringExtra("desayunos3");
+        String d4 = i.getStringExtra("desayunos4");
+        String d5 = i.getStringExtra("desayunos5");
+        String d6 = i.getStringExtra("desayunos6");
+        String d7 = i.getStringExtra("desayunos7");
+        String c1 = i.getStringExtra("comidas1");
+        String c2 = i.getStringExtra("comidas2");
+        String c3 = i.getStringExtra("comidas3");
+        String c4 = i.getStringExtra("comidas4");
+        String c5 = i.getStringExtra("comidas5");
+        String c6 = i.getStringExtra("comidas6");
+        String c7 = i.getStringExtra("comidas7");
+
+
 
         //Para usar la información recogida del intent
         TextView informacion = (TextView)findViewById(R.id.info);
@@ -59,6 +75,22 @@ public class Dietas   extends  ActionBarActivity{
         TextView ce5 = (TextView)findViewById(R.id.ce5);
         TextView ce6 = (TextView)findViewById(R.id.ce6);
         TextView ce7 = (TextView)findViewById(R.id.ce7);
+
+        //Cambiamos los textos con la información del intent:
+        des1.setText(d1);
+        des2.setText(d2);
+        des3.setText(d3);
+        des4.setText(d4);
+        des5.setText(d5);
+        des6.setText(d6);
+        des7.setText(d7);
+        co1.setText(c1);
+        co2.setText(c2);
+        co3.setText(c3);
+        co4.setText(c4);
+        co5.setText(c5);
+        co6.setText(c6);
+        co7.setText(c7);
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);

@@ -66,6 +66,14 @@ public class Listadietas extends AppCompatActivity {
         "",
         "Una dieta líquida es aquella que no contiene alimentos sólidos, prescritas normalmente para enfermedades gastrointestinales o antes o después de ciertos tipos de cirugía, como la cirugía oral y del tracto gastrointestinal."};
 
+    //En el siguiente array de dos dimensiones, van todos los desayunos:
+    String[][] desayunos = {{"Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York"},
+            {"Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada"}};
+
+    //Array para las comidas:
+    String[][] comidas = {{"Puré de lentejas\nPescado con verduritas\nYogurt natural","Arroz con verduras\nSalmón\nYogurt natural","Crema de legumbres\nTernera asada con champiñones\nArroz con leche","Paella\nAlbóndigas\nCompota de manzana","Crema de alubias\nMuslo de pollo asado\nCompota de manzana","Menestra de verduras\nPescado en salsa verde\nCompota de manzana","Judías verdes con patatas\nConejo a la cazadora\nFlan"},
+            {"Puré de patata\nPollo asado desgrasado\nYogurt natural","Arroz con verduras\nMerluza cocida\nYogurt natural","Macarrones con queso\nTernera asada con champiñones\nArroz con leche","Sopa de estrellas\nPescado al horno\nCompota de manzana","Puré de patata\nPollo asado desgrasado\nCompota de manzana","Sopa de estrellas\nPescado en salsa verde\nNatillas","Puré de patata\nMerluza cocida\nFlan"}};
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dietas);
@@ -97,16 +105,10 @@ public class Listadietas extends AppCompatActivity {
             public void onItemClick(View view, int position) {
                 Toast.makeText(Listadietas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
                 if(position==0){
-                    Intent intent = new Intent(Listadietas.this, Dietas.class);
-                    intent.putExtra("nombre", nombre[0]);
-                    intent.putExtra("info", informacion[0]);
-                    startActivity(intent);
+                    CrearIntent(position);
                 }
                 if(position==1){
-                    Intent intent = new Intent(Listadietas.this, Dietas.class);
-                    intent.putExtra("nombre", nombre[1]);
-                    intent.putExtra("info", informacion[1]);
-                    startActivity(intent);
+                    CrearIntent(position);
                 }
                 if(position==2){
                     Intent intent = new Intent(Listadietas.this, NavigationDrawer.class);
@@ -114,10 +116,7 @@ public class Listadietas extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(position==3){
-                    Intent intent = new Intent(Listadietas.this, Dietas.class);
-                    intent.putExtra("nombre", nombre[3]);
-                    intent.putExtra("info", informacion[3]);
-                    startActivity(intent);
+                    CrearIntent(position);
                 }
             }
         }));
@@ -142,11 +141,6 @@ public class Listadietas extends AppCompatActivity {
     }
 
 
-    //Este método nos dirige a otra actividad
-    public void ejecutar_info(View view){
-        Intent i = new Intent(this, SettingsActivity.class);
-        startActivity(i);
-    }
     //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
     //que ejecutan cada opción
     @Override
@@ -158,7 +152,7 @@ public class Listadietas extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem opcion_menu){
         int id=opcion_menu.getItemId();
         if(id==R.id.configuracion){
-            ejecutar_info(null);
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
         if(id==R.id.info){
@@ -179,10 +173,34 @@ public class Listadietas extends AppCompatActivity {
         return super.onOptionsItemSelected(opcion_menu);
     }
 
+
+
+    public void CrearIntent(int i){
+        Intent intent = new Intent(Listadietas.this, Dietas.class);
+        intent.putExtra("nombre", nombre[i]);
+        intent.putExtra("info", informacion[i]);
+        intent.putExtra("desayunos1", desayunos[i][0]);
+        intent.putExtra("desayunos2", desayunos[i][1]);
+        intent.putExtra("desayunos3", desayunos[i][2]);
+        intent.putExtra("desayunos4", desayunos[i][3]);
+        intent.putExtra("desayunos5", desayunos[i][4]);
+        intent.putExtra("desayunos6", desayunos[i][5]);
+        intent.putExtra("desayunos7", desayunos[i][6]);
+        intent.putExtra("comidas1", comidas[i][0]);
+        intent.putExtra("comidas2", comidas[i][1]);
+        intent.putExtra("comidas3", comidas[i][2]);
+        intent.putExtra("comidas4", comidas[i][3]);
+        intent.putExtra("comidas5", comidas[i][4]);
+        intent.putExtra("comidas6", comidas[i][5]);
+        intent.putExtra("comidas7", comidas[i][6]);
+        startActivity(intent);
+    }
+
+
     //Añadimos la opción de favoritos:
-    public void clickBoton1 (View v) {
+    /*public void clickBoton1 (View v) {
         Button boton = (Button)
                 findViewById(R.id.favoritos);
         boton.setBackground(Drawable.createFromPath("@android:drawable/btn_star_big_on"));
-    }
+    }*/
 }
