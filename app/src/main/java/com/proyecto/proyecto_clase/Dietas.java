@@ -41,6 +41,20 @@ public class Dietas   extends  ActionBarActivity{
         String c5 = i.getStringExtra("comidas5");
         String c6 = i.getStringExtra("comidas6");
         String c7 = i.getStringExtra("comidas7");
+        String m1 = i.getStringExtra("meriendas1");
+        String m2 = i.getStringExtra("meriendas2");
+        String m3 = i.getStringExtra("meriendas3");
+        String m4 = i.getStringExtra("meriendas4");
+        String m5 = i.getStringExtra("meriendas5");
+        String m6 = i.getStringExtra("meriendas6");
+        String m7 = i.getStringExtra("meriendas7");
+        String c_1 = i.getStringExtra("cenas1");
+        String c_2 = i.getStringExtra("cenas2");
+        String c_3 = i.getStringExtra("cenas3");
+        String c_4 = i.getStringExtra("cenas4");
+        String c_5 = i.getStringExtra("cenas5");
+        String c_6 = i.getStringExtra("cenas6");
+        String c_7 = i.getStringExtra("cenas7");
 
 
 
@@ -91,6 +105,20 @@ public class Dietas   extends  ActionBarActivity{
         co5.setText(c5);
         co6.setText(c6);
         co7.setText(c7);
+        me1.setText(m1);
+        me2.setText(m2);
+        me3.setText(m3);
+        me4.setText(m4);
+        me5.setText(m5);
+        me6.setText(m6);
+        me7.setText(m7);
+        ce1.setText(c_1);
+        ce2.setText(c_2);
+        ce3.setText(c_3);
+        ce4.setText(c_4);
+        ce5.setText(c_5);
+        ce6.setText(c_6);
+        ce7.setText(c_7);
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);

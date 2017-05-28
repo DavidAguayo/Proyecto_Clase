@@ -51,28 +51,54 @@ public class Listadietas extends AppCompatActivity {
     private List<DietasLista> dietas_item;
     private DietasAdapter dietasAdapter;
 
-    String[] nombre = {"Hiperproteica blanda", "Protección gástrica","Astringente pobre en residuos","Dieta\nlíquida"};
+    String[] nombre = {"Hiperproteica blanda", "Protección gástrica","Astringente pobre en residuos","Dieta\nlíquida","Sin\ngluten","Ovo-lacto-vegetariana","Blanda sin lácteos","Control\ncolesterol"};
 
     int[] img = {
             R.drawable.hiperproteica,
             R.drawable.proteccion,
             R.drawable.astringente,
-            R.drawable.dietaliquida
+            R.drawable.dietaliquida,
+            R.drawable.singluten,
+            R.drawable.ovolacto,
+            R.drawable.blandasinlacteos,
+            R.drawable.controlcolesterol
     };
 
     //Variables para compartir datos entre actividades a través del intent
     String[] informacion = {"La dieta hiperproteica se caracteriza porque consiste en consumir sin límites aquellos alimentos que son ricos en proteínas, como los fiambres, las carnes, los embutidos, los lácteos y el huevo, pero prohíbe alimentos tan importantes para la salud como los cereales, el pan, las patatas, las legumbres, etc.",
         "La función principal de una dieta de protección gástrica es mantener el estómago en un estado de semireposo funcional, por lo cual se recomienda hacer comidas pequeñas, pero frecuentes, a base de alimentos blandos. En esta dieta evitaremos también ciertos alimentos irritantes de la mucosa gástrica y privilegiaremos en tanto, otros alimentos beneficiosos para el sistema gastrointestinal.",
         "",
-        "Una dieta líquida es aquella que no contiene alimentos sólidos, prescritas normalmente para enfermedades gastrointestinales o antes o después de ciertos tipos de cirugía, como la cirugía oral y del tracto gastrointestinal."};
+        "Una dieta líquida es aquella que no contiene alimentos sólidos, prescritas normalmente para enfermedades gastrointestinales o antes o después de ciertos tipos de cirugía, como la cirugía oral y del tracto gastrointestinal.",
+        "El único tratamiento eficaz para la Enfermedad Celiaca es una dieta sin gluten para toda la vida. El gluten es una proteína que se encuentra en la semilla de cereales como trigo, cebada, centeno y derivados y posiblemente avena. Es recomendable consumir productos naturales ya que los productos manufacturados tienen un mayor riesgo de estar contaminados o contener trazas."};
 
     //En el siguiente array de dos dimensiones, van todos los desayunos:
     String[][] desayunos = {{"Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York","Leche, azúcar\nClara huevo\nTostadas\nJamón York"},
-            {"Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada"}};
+            {"Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada","Leche, azúcar\nGalletas\nMantequilla, mermelada"},
+            {""},
+            {"Café con leche","Café con leche","Café con leche","Café con leche","Café con leche","Café con leche","Café con leche"},
+            {"Leche, azúcar\nTostadas sin gluten\nMermelada","Leche, azúcar\nTostadas sin gluten\nMermelada","Leche, azúcar\nTostadas sin gluten\nMermelada","Leche, azúcar\nTostadas sin gluten\nMermelada","Leche, azúcar\nTostadas sin gluten\nMermelada","Leche, azúcar\nTostadas sin gluten\nMermelada","Leche, azúcar\nTostadas sin gluten\nMermelada"}};
 
     //Array para las comidas:
     String[][] comidas = {{"Puré de lentejas\nPescado con verduritas\nYogurt natural","Arroz con verduras\nSalmón\nYogurt natural","Crema de legumbres\nTernera asada con champiñones\nArroz con leche","Paella\nAlbóndigas\nCompota de manzana","Crema de alubias\nMuslo de pollo asado\nCompota de manzana","Menestra de verduras\nPescado en salsa verde\nCompota de manzana","Judías verdes con patatas\nConejo a la cazadora\nFlan"},
-            {"Puré de patata\nPollo asado desgrasado\nYogurt natural","Arroz con verduras\nMerluza cocida\nYogurt natural","Macarrones con queso\nTernera asada con champiñones\nArroz con leche","Sopa de estrellas\nPescado al horno\nCompota de manzana","Puré de patata\nPollo asado desgrasado\nCompota de manzana","Sopa de estrellas\nPescado en salsa verde\nNatillas","Puré de patata\nMerluza cocida\nFlan"}};
+            {"Puré de patata\nPollo asado desgrasado\nYogurt natural","Arroz con verduras\nMerluza cocida\nYogurt natural","Macarrones con queso\nTernera asada con champiñones\nArroz con leche","Sopa de estrellas\nPescado al horno\nCompota de manzana","Puré de patata\nPollo asado desgrasado\nCompota de manzana","Sopa de estrellas\nPescado en salsa verde\nNatillas","Puré de patata\nMerluza cocida\nFlan"},
+            {""},
+            {"Caldo","Caldo","Caldo","Caldo","Caldo","Caldo","Caldo"},
+            {"Lentejas sin gluten\nPollo asado sin gluten\nFruta","Porrusalda\nSalmón con patatas al vapor sin gluten\nYogurt natural","Crema de legumbres\nFilete con patatas sin gluten\nArroz con leche","Ensalada sin gluten\nGallo con patatas sin gluten\nYogurt natural","Crema de alubias\nPollo asado desgrasado\nYogurt natural","Menestra sin gluten\nMerluza a la plancha sin gluten\nFruta","Judías verdes con patatas\nFilete son patatas sin gluten\nFruta"}};
+
+    //Array para las meriendas:
+    String[][] meriendas = {{"Café con leche\nGalletas","Café con leche\nGalletas","Café con leche\nGalletas","Café con leche\nGalletas","Café con leche\nGalletas","Café con leche\nGalletas","Café con leche\nGalletas"},
+            {""},
+            {""},
+            {"Café con leche","Café con leche","Café con leche","Café con leche","Café con leche","Café con leche","Café con leche"},
+            {""}};
+
+    //Array para las cenas:
+    String[][] cenas = {{"Crema de zanahorias\nTortilla de jamón york\nCompota de manzana", "Sopa de estrellas\nMerluza al horno\nCompota de manzana","Sopa de verduras\nLenguado menier\nNatillas","Crema de guisantes\nBacalao ajoarriero\nYogur natural","Sopa de pescado\nPescado al horno con guarnición\nNatillas","Sopa de ajo\nLomos de cabracho\nYogur de sabores","Crema de calabacín\nPavo en salsa\nYogur natural"},
+            {""},
+            {""},
+            {"Caldo","Caldo","Caldo","Caldo","Caldo","Caldo","Caldo"},
+            {""}};
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,7 +130,8 @@ public class Listadietas extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(Listadietas.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
-                if(position==0){
+                CrearIntent(position);
+                /*if(position==0){
                     CrearIntent(position);
                 }
                 if(position==1){
@@ -118,6 +145,9 @@ public class Listadietas extends AppCompatActivity {
                 if(position==3){
                     CrearIntent(position);
                 }
+                if(position==4){
+                    CrearIntent(position);
+                }*/
             }
         }));
 
@@ -193,6 +223,20 @@ public class Listadietas extends AppCompatActivity {
         intent.putExtra("comidas5", comidas[i][4]);
         intent.putExtra("comidas6", comidas[i][5]);
         intent.putExtra("comidas7", comidas[i][6]);
+        intent.putExtra("meriendas1", meriendas[i][0]);
+        intent.putExtra("meriendas2", meriendas[i][1]);
+        intent.putExtra("meriendas3", meriendas[i][2]);
+        intent.putExtra("meriendas4", meriendas[i][3]);
+        intent.putExtra("meriendas5", meriendas[i][4]);
+        intent.putExtra("meriendas6", meriendas[i][5]);
+        intent.putExtra("meriendas7", meriendas[i][6]);
+        intent.putExtra("cenas1", cenas[i][0]);
+        intent.putExtra("cenas2", cenas[i][1]);
+        intent.putExtra("cenas3", cenas[i][2]);
+        intent.putExtra("cenas4", cenas[i][3]);
+        intent.putExtra("cenas5", cenas[i][4]);
+        intent.putExtra("cenas6", cenas[i][5]);
+        intent.putExtra("cenas7", cenas[i][6]);
         startActivity(intent);
     }
 
