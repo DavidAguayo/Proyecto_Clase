@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+    <include layout="@layout/tool_bar" android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"></include>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sprint1">
+        <Button
+            android:id="@+id/sprint"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/a_bordes"
+            android:text="Sprint"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/run"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/a_bordes"
+            android:text="Run"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sprint" />
+
+        <Button
+            android:id="@+id/calen"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/a_bordes"
+            android:text="warm-ups"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sprint" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

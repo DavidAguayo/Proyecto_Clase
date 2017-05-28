@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- permite vibrar el movil -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -32,7 +34,7 @@
         <activity
             android:name=".Dietas"
             android:parentActivityName=".Listadietas"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -67,8 +69,19 @@
         <activity
             android:name=".NavigationDrawer"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MainRunning" />
+        <activity
+            android:name=".MainSprint"
+            android:label="@string/title_activity_main_sprint"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MainEv1" />
+        <activity android:name=".MainEv2" />
+        <activity android:name=".MainEv3" />
+        <activity android:name=".MainCalentamiento" />
+        <activity android:name=".MainRun"
+            android:label="@string/titulo_main_running"></activity>
     </application>
 
 </manifest>

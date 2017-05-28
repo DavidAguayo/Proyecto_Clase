@@ -20,7 +20,7 @@ public class MainEjercicios extends AppCompatActivity {
         setContentView(R.layout.activity_main_ejercicios);
         BEjercicios = (Button)findViewById(R.id.BEjercicios);
        // BWorkout = (Button)findViewById(R.id.BWorkout);
-        // BRuning =(Button)findViewById(R.id.BRuning);
+        BRuning =(Button)findViewById(R.id.BRuning);
 
         BEjercicios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,8 +31,8 @@ public class MainEjercicios extends AppCompatActivity {
                 startActivity(intentEjer);
             }
         });
-        /*
-        BWorkout.setOnClickListener(new View.OnClickListener() {
+
+       /* BWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
@@ -40,16 +40,16 @@ public class MainEjercicios extends AppCompatActivity {
                 //Iniciamos la nueva actividad
                 startActivity(intentEjer);
             }
-        });
+        });*/
         BRuning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
-                Intent intentEjer = new Intent(MainEjercicios.this, MainRuning.class);
+                Intent intentEjer = new Intent(MainEjercicios.this, MainRunning.class);
                 //Iniciamos la nueva actividad
                 startActivity(intentEjer);
             }
-        });*/
+        });
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);

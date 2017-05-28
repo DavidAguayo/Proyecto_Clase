@@ -57,7 +57,7 @@ public class Listadietas extends AppCompatActivity {
             R.drawable.hiperproteica,
             R.drawable.proteccion,
             R.drawable.astringente,
-            R.drawable.dietaliquida
+            R.drawable.dietaliquidaborr
     };
 
     //Variables para compartir datos entre actividades a través del intent
