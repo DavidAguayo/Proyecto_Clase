@@ -20,7 +20,6 @@ public class Alimentos extends AppCompatActivity {
         setContentView(R.layout.activity_alimentos);
         //Lo que viene a continuación es para las pestañas(tabs)
         Resources res = getResources();
-
         TabHost tabs=(TabHost)findViewById(android.R.id.tabhost);
         tabs.setup();
 
@@ -39,14 +38,12 @@ public class Alimentos extends AppCompatActivity {
         tabs.setCurrentTab(0);
         //Hasta aquí es lo de las tabs
 
-        //Lo que viene a continuación sirve para avriguar los alimentos que no
+        //Lo que viene a continuación sirve para averiguar los alimentos que no
         //están seleccionados
         textView = (TextView)findViewById(R.id.prueba) ;
         Switch s1 = (Switch) findViewById(R.id.switch1);
         Boolean resp1 = s1.isChecked();
-        if(s1.isChecked()==false){
-            textView.setText("Acedera");
-        }
+        Cambios(resp1);
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
@@ -55,4 +52,14 @@ public class Alimentos extends AppCompatActivity {
         //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Ingredientes");
     }
+    public void Cambios(Boolean resp1){
+        if(resp1==true){
+            textView.setText("Acedera");
+        }
+    }
 }
+
+/*Para hacer lo de quitar las dietas que contengan alimentos desactivados
+hay que comprobar si un switch está desactivado para introducirlo todo
+en un String y pasarlo al OnCreate de Listadietas.java y comprobarlo
+antes de cargar el recyclerview*/
