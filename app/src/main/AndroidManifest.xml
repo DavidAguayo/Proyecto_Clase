@@ -71,17 +71,24 @@
             android:label="@string/title_activity_navigation_drawer"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MainRunning" />
+        <activity android:name=".MainRunning"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainSprint"
-            android:label="@string/title_activity_main_sprint"
+            android:label="Ejercicios de velocidad"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MainEv1" />
-        <activity android:name=".MainEv2" />
-        <activity android:name=".MainEv3" />
-        <activity android:name=".MainCalentamiento" />
+        <activity android:name=".MainEv1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainEv2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainEv3"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainCalentamiento"
+            android:screenOrientation="portrait"/>
         <activity android:name=".MainRun"
-            android:label="@string/titulo_main_running"></activity>
+            android:label="@string/titulo_main_running"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
