@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 
+import java.util.ArrayList;
+
 import static android.R.attr.button;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //El arraylist es para añadir la opción de quitar los alimentos
+                ArrayList<String> datos= new ArrayList<String>();
                 Intent intent = new Intent(MainActivity.this, Listadietas.class);
+                intent.putExtra("datos",datos);
                 startActivity(intent);
             }
         });
@@ -48,11 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
-
-        //Para poner el título al action bar:
-        //getSupportActionBar().setTitle("GoodEaTraining");
-        //Para ocultar el action bar:
-        //getSupportActionBar().hide();
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);

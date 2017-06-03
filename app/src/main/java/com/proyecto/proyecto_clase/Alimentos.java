@@ -1,12 +1,17 @@
 package com.proyecto.proyecto_clase;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class Alimentos extends AppCompatActivity {
     TextView textView;
@@ -40,10 +45,14 @@ public class Alimentos extends AppCompatActivity {
 
         //Lo que viene a continuación sirve para averiguar los alimentos que no
         //están seleccionados
+        Button guardar = (Button) findViewById(R.id.guardarInfo);
         textView = (TextView)findViewById(R.id.prueba) ;
-        Switch s1 = (Switch) findViewById(R.id.switch1);
-        Boolean resp1 = s1.isChecked();
-        Cambios(resp1);
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Comprobar();
+            }
+        });
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
@@ -52,10 +61,23 @@ public class Alimentos extends AppCompatActivity {
         //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Ingredientes");
     }
-    public void Cambios(Boolean resp1){
-        if(resp1==true){
-            textView.setText("Acedera");
+
+    public void Comprobar(){
+        ArrayList<String> datos= new ArrayList<String>();
+        int cnt=0;
+        Switch s1 = (Switch) findViewById(R.id.switch1);
+        Switch s2 = (Switch) findViewById(R.id.switch2);
+        if(!s1.isChecked()){
+            datos.add(String.valueOf(s1.getText()));
+            cnt++;
         }
+        if(!s2.isChecked()){
+            datos.add(String.valueOf(s2.getText()));
+            cnt++;
+        }
+        Intent intent = new Intent(this, Listadietas.class);
+        intent.putExtra("datos",datos);
+        startActivity(intent);
     }
 }
 

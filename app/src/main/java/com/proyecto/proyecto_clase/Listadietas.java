@@ -120,6 +120,9 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dietas);
 
+        //Para recoger la información de los alimentos
+        ArrayList<String> datos = (ArrayList<String>) getIntent().getSerializableExtra("datos");
+
         //Lo que viene a continuación sirve para hacer lo del recycler view
         drecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         if(drecyclerView != null){
@@ -132,10 +135,25 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
 
         dietas_item = new ArrayList<>();
 
-        for(int i = 0; i<nombre.length; i++){
+        //Para comprobar con la información de los alimentos:
+        if(!datos.isEmpty()) {
+            for (int i = 0; i < datos.size(); i++){
+                if(datos.get(i).equals("Acedera")){
+                    DietasLista dietas = new DietasLista(nombre[i], img[i]);
+                    dietas_item.add(dietas);
+                }
+            }
+        }
+        else if(datos.isEmpty()){
+            for(int i = 0; i<nombre.length; i++){
+                DietasLista dietas = new DietasLista(nombre[i], img[i]);
+                dietas_item.add(dietas);}
+        }
+
+        /*for(int i = 0; i<nombre.length; i++){
             DietasLista dietas = new DietasLista(nombre[i], img[i]);
             dietas_item.add(dietas);
-        }
+        }*/
         dietasAdapter = new DietasAdapter(dietas_item);
         drecyclerView.setAdapter(dietasAdapter);
         dietasAdapter.notifyDataSetChanged();

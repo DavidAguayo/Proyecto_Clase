@@ -15,9 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"></include>
+
+    <Button
+        android:text="Guardar información"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/guardarInfo"
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.ActionMode.Title" />
+
     <TabHost android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="vertical"
@@ -128,12 +136,7 @@
                                 android:textSize="18sp"
                                 android:checked="true" />
 
-                            <TextView
-                                android:text="TextView"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/prueba"
-                                android:layout_weight="1" />
+
                         </LinearLayout>
                     </android.support.v4.widget.NestedScrollView>
                 </LinearLayout>
@@ -240,6 +243,11 @@
             </FrameLayout>
         </LinearLayout>
     </TabHost>
-
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/prueba"
+        android:layout_weight="1" />
 
 </LinearLayout>
