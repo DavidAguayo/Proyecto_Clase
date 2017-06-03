@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class Dietas   extends  ActionBarActivity{
     //Instancia de la clase Toolbar para incluirlo:
     private Toolbar toolbar;
@@ -154,7 +156,10 @@ public class Dietas   extends  ActionBarActivity{
             return true;
         }
         if(id==R.id.atras){
+            //El arraylist es para añadir la opción de quitar los alimentos
+            ArrayList<String> datos= new ArrayList<String>();
             Intent i = new Intent(this, Listadietas.class);
+            i.putExtra("datos",datos);
             startActivity(i);
             return true;
         }
