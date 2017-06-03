@@ -1,5 +1,6 @@
 package com.proyecto.proyecto_clase;
 
+import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.Chronometer;
 
 public class MainRun extends AppCompatActivity {
     private Toolbar toolbar;
-    Button startf, pausaf, stopf;
+    Button startf, pausaf, stopf,btdatos;
     Chronometer cronometro2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,18 @@ public class MainRun extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Running");
+        btdatos =(Button)findViewById(R.id.dato);
+        btdatos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Creamos el Intent
+                Intent inte = new Intent(MainRun.this, MainDatos.class);
+                Bundle b = new Bundle();
+                b.putString("tiempo", cronometro2.getText().toString());
+                inte.putExtras(b);
+                startActivity(inte);
+            }
+        });
     }
     public void empezado(View vista){
         startf.setEnabled(false);
