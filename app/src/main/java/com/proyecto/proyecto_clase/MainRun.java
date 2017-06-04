@@ -11,7 +11,7 @@ import android.widget.Chronometer;
 
 public class MainRun extends AppCompatActivity {
     private Toolbar toolbar;
-    Button startf, pausaf, stopf,btdatos;
+    Button startf, pausaf, stopf,btdatos,botonlamada;
     Chronometer cronometro2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,15 @@ public class MainRun extends AppCompatActivity {
                 b.putString("tiempo", cronometro2.getText().toString());
                 inte.putExtras(b);
                 startActivity(inte);
+            }
+        });
+        botonlamada=(Button)findViewById(R.id.btmaps);
+        botonlamada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Creamos el Intent
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.google.android.apps.maps");
+                startActivity(launchIntent);
             }
         });
     }
