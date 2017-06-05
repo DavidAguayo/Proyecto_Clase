@@ -1,4 +1,5 @@
 package com.proyecto.proyecto_clase.adapters;
+import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,8 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.snowdream.android.widget.SmartImageView;
 import com.proyecto.proyecto_clase.Dietas;
 import com.proyecto.proyecto_clase.R;
+import com.proyecto.proyecto_clase.clases.Dieta;
 import com.proyecto.proyecto_clase.models.DietasLista;
 
 import java.util.ArrayList;
@@ -18,20 +21,20 @@ import java.util.List;
  */
 
 public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder>{
-    ArrayList<DietasLista> dietasList;
+    ArrayList<Dieta> dietasList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView nombreDieta;
-        public ImageView dietasImg;
+        public SmartImageView dietasImg;
 
         public ViewHolder(View v){
             super(v);
             nombreDieta=(TextView)v.findViewById(R.id.nombre);
-            dietasImg=(ImageView)v.findViewById(R.id.dietasimg);
+            dietasImg=(SmartImageView)v.findViewById(R.id.dietasimg);
         }
     }
 
-    public DietasAdapter(ArrayList<DietasLista> dietasList){this.dietasList = dietasList;}
+    public DietasAdapter(ArrayList<Dieta> dietasList){this.dietasList = dietasList;}
 
     @Override
     public DietasAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -43,9 +46,10 @@ public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(DietasAdapter.ViewHolder holder, int position) {
-        DietasLista dietas = dietasList.get(position);
-        holder.nombreDieta.setText(String.valueOf(dietas.getNombre()));
-        holder.dietasImg.setImageResource(dietas.getImg());
+        Dieta dietas = dietasList.get(position);
+        Rect rect = new Rect(holder.dietasImg.getLeft(), holder.dietasImg.getTop(), holder.dietasImg.getRight(), holder.dietasImg.getBottom());
+        holder.nombreDieta.setText(String.valueOf(dietas.getName()));
+        holder.dietasImg.setImageUrl(dietas.getImagen(), rect);
     }
 
     @Override
@@ -54,7 +58,7 @@ public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder
     }
 
     //Para introducir la opción de búsqueda:
-    public void setFilter(ArrayList<DietasLista> newList){
+    public void setFilter(ArrayList<Dieta> newList){
         dietasList = new ArrayList<>();
         dietasList.addAll(newList);
         notifyDataSetChanged();

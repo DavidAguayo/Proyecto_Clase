@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- permite vibrar el movil -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -82,6 +83,9 @@
         <activity android:name=".MainCalentamiento" />
         <activity android:name=".MainRun"
             android:label="@string/titulo_main_running"></activity>
+        <activity android:name=".SalasActivity" />
+        <activity android:name=".TablaDietas" />
+
     </application>
 
 </manifest>
