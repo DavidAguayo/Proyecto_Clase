@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- permite vibrar el movil -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -96,6 +97,12 @@
             android:label="@string/titulo_main_running"
             android:screenOrientation="portrait" />
         <activity android:name=".MainDatos"></activity>
+        <activity
+            android:name=".TablaDietas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CrearUsuarioActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

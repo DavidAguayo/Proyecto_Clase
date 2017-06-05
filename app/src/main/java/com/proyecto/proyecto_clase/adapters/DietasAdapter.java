@@ -4,17 +4,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.snowdream.android.widget.SmartImageView;
-import com.proyecto.proyecto_clase.Dietas;
+
 import com.proyecto.proyecto_clase.R;
 import com.proyecto.proyecto_clase.clases.Dieta;
-import com.proyecto.proyecto_clase.models.DietasLista;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Aguayo's family on 30/04/2017.
@@ -30,7 +27,7 @@ public class DietasAdapter extends RecyclerView.Adapter<DietasAdapter.ViewHolder
         public ViewHolder(View v){
             super(v);
             nombreDieta=(TextView)v.findViewById(R.id.nombre);
-            dietasImg=(SmartImageView)v.findViewById(R.id.dietasimg);
+            dietasImg= (SmartImageView)v.findViewById(R.id.dietasimg);
         }
     }
 

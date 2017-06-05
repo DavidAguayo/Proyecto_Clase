@@ -18,11 +18,15 @@ public class MainActivity extends AppCompatActivity {
 
     //Instancia de la clase Toolbar para incluirlo:
     private Toolbar toolbar;
-
+    public String username;
+    public String password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent i = getIntent();
+        username = i.getStringExtra("username");
+        password = i.getStringExtra("password");
         Button button;
         Button button2;
         Button login;
@@ -31,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //El arraylist es para añadir la opción de quitar los alimentos
-                ArrayList<String> datos= new ArrayList<String>();
                 Intent intent = new Intent(MainActivity.this, Listadietas.class);
-                intent.putExtra("datos",datos);
+                intent.putExtra("username", username);
+                intent.putExtra("password", password);
                 startActivity(intent);
             }
         });
@@ -49,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(MainActivity.this, SalasActivity.class);
-                startActivity(intent3);
+
             }
         });
 
