@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //El arraylist es para añadir la opción de quitar los alimentos
+                ArrayList<String> datos= new ArrayList<String>();
                 Intent intent = new Intent(MainActivity.this, Listadietas.class);
                 intent.putExtra("username", username);
                 intent.putExtra("password", password);
