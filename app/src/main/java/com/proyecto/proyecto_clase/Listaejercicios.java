@@ -52,6 +52,7 @@ public class Listaejercicios extends Fragment {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         args.putInt("id", id);
+        args.putInt("id", id);
         args.putString("username",username);
         args.putString("password",password);
         Listaejercicios fragment = new Listaejercicios();
