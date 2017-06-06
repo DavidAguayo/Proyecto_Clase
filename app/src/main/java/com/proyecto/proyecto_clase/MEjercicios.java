@@ -76,6 +76,9 @@ public class MEjercicios extends AppCompatActivity {
                 case 4:
                     TabPectorales frej_pectorales=new TabPectorales();
                     return frej_pectorales;
+                case 5:
+                    TabPectorales frej2_pectorales=new TabPectorales();
+                    return frej2_pectorales;
             }
             return null;
         }
@@ -98,7 +101,9 @@ public class MEjercicios extends AppCompatActivity {
                 case 3:
                     return "Espalda";
                 case 4:
-                    return "Pectorales";
+                    return "peee";
+                case 5:
+                    return "peee";
             }
             return null;
         }

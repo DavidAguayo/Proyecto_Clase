@@ -149,7 +149,7 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
             dLayoutManager = new GridLayoutManager(getBaseContext(),2);
             drecyclerView.setLayoutManager(dLayoutManager);
 
-            for(int i =0 ; i<rutinasArray.length ; i++){
+            for(int i = 0 ; i < rutinasArray.length ; i++){
                 rutinasList.add(rutinasArray[i]);
             }
 

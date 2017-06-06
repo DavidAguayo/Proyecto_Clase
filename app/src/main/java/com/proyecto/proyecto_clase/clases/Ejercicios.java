@@ -9,10 +9,17 @@ public class Ejercicios {
     private String name;
     private String descripcion;
     private String tipo;
+    private String foto;
     private GrupoMuscular grupoMuscular;
 
     public Ejercicios() {
 
+    }
+    public String getFoto() {
+        return foto;
+    }
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
     public Integer getId() {
         return id;

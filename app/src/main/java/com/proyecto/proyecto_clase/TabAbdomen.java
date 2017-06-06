@@ -17,7 +17,7 @@ public class TabAbdomen extends Fragment{
     Button boton11;
     Button boton12;
     Button boton13;
-
+    public static final String ARG_SECTION_NUMBER = "section_number";
     private int[] LogoId = new int[]{R.drawable.uno_abd, R.drawable.dos_abd,
             R.drawable.tres_abd,R.drawable.cuatro_abd,
             R.drawable.cinco_abd, R.drawable.seis_abd,R.drawable.siete_abd,
