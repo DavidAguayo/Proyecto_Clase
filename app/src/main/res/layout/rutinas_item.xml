@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="10dp">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold" />
+
+                <com.github.snowdream.android.widget.SmartImageView
+                    android:id="@+id/rutinasimg"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="0.63"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="3dp"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/favoritos"
+                    android:layout_width="41dp"
+                    android:layout_height="34dp"
+                    android:background="@android:drawable/btn_star_big_off"
+                    android:gravity="end"
+                    android:onClick="cliclBoton1" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

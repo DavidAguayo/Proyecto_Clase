@@ -51,6 +51,9 @@
             android:name=".Listadietas"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".Listarutinas"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Recetas"
             android:screenOrientation="portrait" />
         <activity
@@ -99,6 +102,9 @@
         <activity android:name=".MainDatos"></activity>
         <activity
             android:name=".TablaDietas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TablaRutinas"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CrearUsuarioActivity"

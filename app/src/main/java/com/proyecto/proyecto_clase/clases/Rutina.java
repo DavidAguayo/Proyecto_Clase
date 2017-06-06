@@ -8,8 +8,15 @@ public class Rutina {
     private Integer id;
     private String name;
     private Integer dificultad;
+    private String imagen;
     public Rutina() {
 
+    }
+    public String getImagen() {
+        return imagen;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     public Integer getId() {
         return id;

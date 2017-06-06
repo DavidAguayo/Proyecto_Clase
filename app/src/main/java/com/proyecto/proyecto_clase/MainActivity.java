@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(MainActivity.this, MainEjercicios.class);
+                intent2.putExtra("username", username);
+                intent2.putExtra("password", password);
                 startActivity(intent2);
             }
         });

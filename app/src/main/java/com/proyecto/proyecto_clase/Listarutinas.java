@@ -14,8 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.proyecto.proyecto_clase.adapters.DietasAdapter;
-import com.proyecto.proyecto_clase.clases.Dieta;
+import com.proyecto.proyecto_clase.adapters.RutinasAdapter;
+import com.proyecto.proyecto_clase.clases.Rutina;
 
 import org.springframework.http.HttpAuthentication;
 import org.springframework.http.HttpBasicAuthentication;
@@ -31,29 +31,27 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 /**
- * Created by Aguayo's family on 30/04/2017.
+ * Created by jorge.sanchez on 06/06/2017.
  */
 
-public class Listadietas extends AppCompatActivity implements SearchView.OnQueryTextListener{
-    //Instancia de la clase Toolbar para incluirlo:
+public class Listarutinas extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private Toolbar toolbar;
     //Variables pra lo del recycler view
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
 
-    DietasAdapter dietasAdapter;
+    RutinasAdapter rutinasAdapter;
 
-    public ArrayList<Dieta> dietasList = new ArrayList<>();
-    public Dieta[] dietasArray;
+    public ArrayList<Rutina> rutinasList = new ArrayList<>();
+    public Rutina[] rutinasArray;
     public ArrayList items;
     public String id;
     private String username;
     private String password;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_dietas);
+        setContentView(R.layout.activity_lista_rutinas);
         Intent i = getIntent();
         username = i.getStringExtra("username");
         password = i.getStringExtra("password");
@@ -63,22 +61,20 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         //Para activar el toolbar como barra de herramientas:
         setSupportActionBar(toolbar);
         //Para poner el título al toolbar:
-        getSupportActionBar().setTitle("Lista de dietas");
+        getSupportActionBar().setTitle("Lista de rutinas");
 
         //Para incluir la opción de búsqueda:
         SearchView bs = (SearchView) findViewById(R.id.menu_buscar);
         RecyclerView rv = (RecyclerView)findViewById(R.id.recycler_view);
-        //rv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listview_array));
+        //rv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listview_array))
     }
     @Override
     protected void onStart() {
         super.onStart();
-        dietasList.clear();
+        rutinasList.clear();
         new FetchSecuredResourceTask().execute();
     }
 
-    //Lo que viene a continuación sirve para incluir el menú en la actividad e indicar las acciones
-    //que ejecutan cada opción
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
         getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
@@ -114,12 +110,11 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
     }
 
 
-    //Metodo de metodo asyncrona al servicio rest
     private class FetchSecuredResourceTask extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... params) {
-            final String url = "http://80.29.167.245:8520/dieta/all";
+            final String url = "http://80.29.167.245:8520/rutina/all";
 
             // Populate the HTTP Basic Authentitcation header with the username and password
             HttpAuthentication authHeader = new HttpBasicAuthentication(username, password);
@@ -132,8 +127,8 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
 
             try {
                 // Make the network request
-                ResponseEntity<Dieta[]> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(requestHeaders), Dieta[].class);
-                dietasArray = response.getBody();
+                ResponseEntity<Rutina[]> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(requestHeaders), Rutina[].class);
+                rutinasArray = response.getBody();
                 return "SI";
             } catch (HttpClientErrorException e) {
                 Log.e("SalasActivity", e.getMessage(), e);
@@ -154,19 +149,19 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
             dLayoutManager = new GridLayoutManager(getBaseContext(),2);
             drecyclerView.setLayoutManager(dLayoutManager);
 
-            for(int i =0 ; i<dietasArray.length ; i++){
-                dietasList.add(dietasArray[i]);
+            for(int i =0 ; i<rutinasArray.length ; i++){
+                rutinasList.add(rutinasArray[i]);
             }
 
-            dietasAdapter = new DietasAdapter(dietasList);
-            drecyclerView.setAdapter(dietasAdapter);
-            dietasAdapter.notifyDataSetChanged();
+            rutinasAdapter = new RutinasAdapter(rutinasList);
+            drecyclerView.setAdapter(rutinasAdapter);
+            rutinasAdapter.notifyDataSetChanged();
 
             drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getBaseContext(), new RecyclerItemClickListener.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
-                    Intent intent = new Intent(Listadietas.this, TablaDietas.class);
-                    String id = dietasList.get(position).getId().toString();
+                    Intent intent = new Intent(Listarutinas.this, TablaRutinas.class);
+                    String id = rutinasList.get(position).getId().toString();
                     intent.putExtra("id",id);
                     intent.putExtra("username", username);
                     intent.putExtra("password", password);
@@ -198,6 +193,4 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         //dietasAdapter.setFilter(newList);
         return false;
     }
-
-
 }

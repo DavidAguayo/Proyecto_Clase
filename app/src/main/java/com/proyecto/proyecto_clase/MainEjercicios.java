@@ -10,7 +10,8 @@ import android.widget.Button;
 public class MainEjercicios extends AppCompatActivity {
     //Instancia de la clase Toolbar para incluirlo:
     private Toolbar toolbar;
-
+    private String username;
+    private String password;
     Button BEjercicios;
     Button BWorkout;
     Button BRuning;
@@ -18,8 +19,11 @@ public class MainEjercicios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ejercicios);
+        Intent i = getIntent();
+        username = i.getStringExtra("username");
+        password = i.getStringExtra("password");
         BEjercicios = (Button)findViewById(R.id.BEjercicios);
-       // BWorkout = (Button)findViewById(R.id.BWorkout);
+        BWorkout = (Button)findViewById(R.id.BWorkout);
         BRuning =(Button)findViewById(R.id.BRuning);
 
         BEjercicios.setOnClickListener(new View.OnClickListener() {
@@ -32,15 +36,17 @@ public class MainEjercicios extends AppCompatActivity {
             }
         });
 
-       /* BWorkout.setOnClickListener(new View.OnClickListener() {
+        BWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
-                Intent intentEjer = new Intent(MainEjercicios.this, MainWorkout.class);
+                Intent intentEjer = new Intent(MainEjercicios.this, Listarutinas.class);
+                intentEjer.putExtra("username", username);
+                intentEjer.putExtra("password", password);
                 //Iniciamos la nueva actividad
                 startActivity(intentEjer);
             }
-        });*/
+        });
         BRuning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
