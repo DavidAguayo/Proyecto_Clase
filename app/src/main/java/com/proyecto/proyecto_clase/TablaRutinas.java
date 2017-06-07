@@ -50,7 +50,7 @@ public class TablaRutinas extends AppCompatActivity implements SearchView.OnQuer
     public String username;
     public String password;
     public String id;
-    public ArrayList<DiaRutina> diaRutinasList;
+
     public DiaRutina[] diaRutinasArray;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,7 +141,7 @@ public class TablaRutinas extends AppCompatActivity implements SearchView.OnQuer
 
         @Override
         public Fragment getItem(int position) {
-            return Listaejercicios.newInstance(position + 1,username,password,diaRutinasArray[position].getId());
+            return Listaejercicios.newInstance(username,password,diaRutinasArray[position].getId().toString());
         }
 
         @Override
@@ -154,17 +154,18 @@ public class TablaRutinas extends AppCompatActivity implements SearchView.OnQuer
 
     //Peticion rest de los dias con una id de rutina
 
-    private class FetchSecuredResourceTask extends AsyncTask<Void, Void, String> {
+    private class FetchSecuredResourceTask extends AsyncTask<Void, Void, String>{
 
         @Override
         protected String doInBackground(Void... params) {
-            final String url = "http://80.29.167.245:8520/diaRutina/all";
+            final String url = "http://80.29.167.245:8520/diaRutina/buscarPorIdRutina";
 
             // Populate the HTTP Basic Authentitcation header with the username and password
             HttpAuthentication authHeader = new HttpBasicAuthentication(username, password);
             HttpHeaders requestHeaders = new HttpHeaders();
             requestHeaders.setAuthorization(authHeader);
             requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+            requestHeaders.add("id",id);
             // Create a new RestTemplate instance
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());

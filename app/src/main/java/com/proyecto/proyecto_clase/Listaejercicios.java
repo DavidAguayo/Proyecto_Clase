@@ -1,7 +1,9 @@
 package com.proyecto.proyecto_clase;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import com.proyecto.proyecto_clase.adapters.EjerciciosAdapter;
@@ -42,17 +45,16 @@ public class Listaejercicios extends Fragment {
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
     EjerciciosAdapter ejerciciosAdapter;
-    public static final String ARG_PAGE = "ARG_PAGE";
     public String username;
     public String password;
-    public int id_dia;
+    public String id;
     public DiaEjercicios[] diaEjerciciosArray;
     public ArrayList<Ejercicios> EjerciciosList = new ArrayList<>();
-    public static Listaejercicios newInstance(int page, String username, String password, Integer id) {
+
+
+    public static Listaejercicios newInstance(String username, String password, String id) {
         Bundle args = new Bundle();
-        args.putInt(ARG_PAGE, page);
-        args.putInt("id", id);
-        args.putInt("id", id);
+        args.putString("id", id);
         args.putString("username",username);
         args.putString("password",password);
         Listaejercicios fragment = new Listaejercicios();
@@ -64,42 +66,16 @@ public class Listaejercicios extends Fragment {
         super.onCreate(savedInstanceState);
         username = getArguments().getString("username");
         password = getArguments().getString("password");
-        id_dia = getArguments().getInt("id");
-        new FetchSecuredResourceTask().execute();
+        id = getArguments().getString("id");
 
     }
-    @Override
-    public void onStart() {
-        super.onStart();
 
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.lista_ejercicios, container, false);
-        drecyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
-        if(drecyclerView != null){
-            drecyclerView.setHasFixedSize(true);
-        }
-        dLayoutManager = new GridLayoutManager(getContext(),2);
-        drecyclerView.setLayoutManager(dLayoutManager);
-
-        ejerciciosAdapter = new EjerciciosAdapter(EjerciciosList);
-        drecyclerView.setAdapter(ejerciciosAdapter);
-        ejerciciosAdapter.notifyDataSetChanged();
-
-        drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                //Intent intent = new Intent(Listarutinas.this, TablaRutinas.class);
-                //String id = rutinasList.get(position).getId().toString();
-                //intent.putExtra("id",id);
-                //intent.putExtra("username", username);
-                //intent.putExtra("password", password);
-                //startActivity(intent);
-            }
-        }));
-
+        EjerciciosList.clear();
+        new FetchSecuredResourceTask().execute();
         return view;
     }
 
@@ -110,13 +86,14 @@ public class Listaejercicios extends Fragment {
 
         @Override
         protected String doInBackground(Void... params) {
-                final String url = "http://80.29.167.245:8520/diaEjercicios/all";
+                final String url = "http://80.29.167.245:8520/diaEjercicios/buscarPorIdDia";
 
             // Populate the HTTP Basic Authentitcation header with the username and password
             HttpAuthentication authHeader = new HttpBasicAuthentication(username, password);
             HttpHeaders requestHeaders = new HttpHeaders();
             requestHeaders.setAuthorization(authHeader);
             requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+            requestHeaders.add("id",id);
             // Create a new RestTemplate instance
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
@@ -125,6 +102,9 @@ public class Listaejercicios extends Fragment {
                 // Make the network request
                 ResponseEntity<DiaEjercicios[]> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(requestHeaders), DiaEjercicios[].class);
                 diaEjerciciosArray = response.getBody();
+                for(int i = 0 ; i < diaEjerciciosArray.length ; i++){
+                    EjerciciosList.add(diaEjerciciosArray[i].getEjercicio());
+                }
                 return "SI";
             } catch (HttpClientErrorException e) {
                 Log.e("SalasActivity", e.getMessage(), e);
@@ -138,10 +118,28 @@ public class Listaejercicios extends Fragment {
         @Override
         protected void onPostExecute(String result){
             //Aqui crearemos el recycler view
-
-            for(int i = 0 ; i < diaEjerciciosArray.length ; i++){
-                EjerciciosList.add(diaEjerciciosArray[i].getEjercicio());
+            drecyclerView = (RecyclerView)getView().findViewById(R.id.recycler_view);
+            if(drecyclerView != null){
+                drecyclerView.setHasFixedSize(true);
             }
+            dLayoutManager = new GridLayoutManager(getContext(),1);
+            drecyclerView.setLayoutManager(dLayoutManager);
+
+            ejerciciosAdapter = new EjerciciosAdapter(EjerciciosList);
+            drecyclerView.setAdapter(ejerciciosAdapter);
+            ejerciciosAdapter.notifyDataSetChanged();
+
+            drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    Intent intent = new Intent(getActivity(), MainComunEjer.class);
+                    intent.putExtra("id",EjerciciosList.get(position).getId().toString());
+                    intent.putExtra("username", username);
+                    intent.putExtra("password", password);
+                    startActivity(intent);
+                }
+            }));
+
         }
     }
 }
