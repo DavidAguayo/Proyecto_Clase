@@ -8,12 +8,8 @@ public class Ejercicios {
     private Integer id;
     private String name;
     private String descripcion;
-    private String tipo;
     private String foto;
-    private GrupoMuscular grupoMuscular;
-
     public Ejercicios() {
-
     }
     public String getFoto() {
         return foto;
@@ -39,16 +35,5 @@ public class Ejercicios {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public GrupoMuscular getGrupoMuscular() {
-        return grupoMuscular;
-    }
-    public void setGrupoMuscular(GrupoMuscular grupoMuscular) {
-        this.grupoMuscular = grupoMuscular;
-    }
+
 }

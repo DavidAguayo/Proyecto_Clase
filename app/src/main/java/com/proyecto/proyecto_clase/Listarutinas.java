@@ -44,11 +44,13 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
     RutinasAdapter rutinasAdapter;
 
     public ArrayList<Rutina> rutinasList = new ArrayList<>();
+    public ArrayList<Rutina> aux = new ArrayList<>();
     public Rutina[] rutinasArray;
     public ArrayList items;
     public String id;
     private String username;
     private String password;
+    private Boolean filtro = false;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_rutinas);
@@ -62,6 +64,8 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
         setSupportActionBar(toolbar);
         //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Lista de rutinas");
+        //boton de atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Para incluir la opción de búsqueda:
         SearchView bs = (SearchView) findViewById(R.id.menu_buscar);
@@ -101,14 +105,35 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
             startActivity(i);
             return true;
         }
-        if(id==R.id.atras){
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+        if(id==android.R.id.home){
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(opcion_menu);
     }
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
 
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        newText = newText.toLowerCase();
+        aux.clear();
+        ArrayList<Rutina> newList = new ArrayList<>();
+        for(Rutina rutinas : rutinasList)
+        {
+            String name = rutinas.getName().toLowerCase();
+           if(name.contains(newText)){
+               newList.add(rutinas);
+               filtro = true;
+               aux.add(rutinas);
+            }
+        }
+        rutinasAdapter.setFilter(newList);
+
+        return false;
+    }
 
     private class FetchSecuredResourceTask extends AsyncTask<Void, Void, String> {
 
@@ -160,12 +185,22 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
             drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getBaseContext(), new RecyclerItemClickListener.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
-                    Intent intent = new Intent(Listarutinas.this, TablaRutinas.class);
-                    String id = rutinasList.get(position).getId().toString();
-                    intent.putExtra("id",id);
-                    intent.putExtra("username", username);
-                    intent.putExtra("password", password);
-                    startActivity(intent);
+
+                    if(filtro) {
+                        Intent intent = new Intent(Listarutinas.this, TablaRutinas.class);
+                        String id = aux.get(position).getId().toString();
+                        intent.putExtra("id", id);
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
+                        startActivity(intent);
+                    }else{
+                        Intent intent = new Intent(Listarutinas.this, TablaRutinas.class);
+                        String id = rutinasList.get(position).getId().toString();
+                        intent.putExtra("id", id);
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
+                        startActivity(intent);
+                    }
                 }
             }));
 
@@ -174,23 +209,5 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
     }
 
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
 
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        //newText = newText.toLowerCase();
-        //ArrayList<Dieta> newList = new ArrayList<>();
-        //for(Dieta dietas : items)
-        //{
-        //    String name = dietas.getName();
-        //    if(name.contains(newText)){
-        //        newList.add(dietas);
-        //    }
-        //}
-        //dietasAdapter.setFilter(newList);
-        return false;
-    }
 }

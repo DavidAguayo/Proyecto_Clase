@@ -6,6 +6,8 @@ package com.proyecto.proyecto_clase.clases;
 
 public class DiaEjercicios {
     private Integer id;
+    private Ejercicios ejercicio;
+    private DiaRutina diaRutina;
 
     public Integer getId() {
         return id;
@@ -31,8 +33,6 @@ public class DiaEjercicios {
         this.diaRutina = diaRutina;
     }
 
-    private Ejercicios ejercicio;
-    private DiaRutina diaRutina;
 
 
 }

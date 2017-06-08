@@ -1,32 +1,38 @@
 package com.proyecto.proyecto_clase.clases;
 
 /**
- * Created by Jorge on 29/05/2017.
+ * Created by Jorge on 08/06/2017.
  */
 
-public class RutinaEjercicios {
+public class EjerciciosGrupo {
     private Integer id;
-    private Rutina rutina;
+    private GrupoMuscular grupoMuscular;
     private Ejercicios ejercicio;
-    public RutinaEjercicios() {
 
-    }
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
-    public Rutina getRutina() {
-        return rutina;
+
+    public GrupoMuscular getGrupoMuscular() {
+        return grupoMuscular;
     }
-    public void setRutina(Rutina rutina) {
-        this.rutina = rutina;
+
+    public void setGrupoMuscular(GrupoMuscular grupoMuscular) {
+        this.grupoMuscular = grupoMuscular;
     }
+
     public Ejercicios getEjercicio() {
         return ejercicio;
     }
+
     public void setEjercicio(Ejercicios ejercicio) {
         this.ejercicio = ejercicio;
     }
+
+
+
 }

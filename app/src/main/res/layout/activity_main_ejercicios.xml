@@ -7,7 +7,9 @@
     android:orientation="vertical"
     tools:context="com.proyecto.proyecto_clase.MainEjercicios">
     <!--Para incluir el toolbar-->
-    <include layout="@layout/tool_bar" android:id="@+id/tool_bar"
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"></include>

@@ -18,9 +18,4 @@
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always"
         android:orderInCategory="2"/>
-    <item android:id="@+id/atras"
-        android:title="Atrás"
-        android:icon="@android:drawable/ic_menu_revert"
-        app:showAsAction="always"
-        android:orderInCategory="1"/>
 </menu>

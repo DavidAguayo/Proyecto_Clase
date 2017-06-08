@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,11 +28,22 @@ public class MainEjercicios extends AppCompatActivity {
         BWorkout = (Button)findViewById(R.id.BWorkout);
         BRuning =(Button)findViewById(R.id.BRuning);
 
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al toolbar:
+        getSupportActionBar().setTitle("Ejercicios");
+        //boton de atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         BEjercicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
                 Intent intentEjer = new Intent(MainEjercicios.this, MEjercicios.class);
+                intentEjer.putExtra("username", username);
+                intentEjer.putExtra("password", password);
                 //Iniciamos la nueva actividad
                 startActivity(intentEjer);
             }
@@ -57,14 +70,37 @@ public class MainEjercicios extends AppCompatActivity {
             }
         });
 
-        //Para incluir el Toolbar:
-        toolbar=(Toolbar)findViewById(R.id.tool_bar);
-        //Para activar el toolbar como barra de herramientas:
-        setSupportActionBar(toolbar);
-        //Para ocultar el toolbar:
-        getSupportActionBar().setTitle("Tipos de ejercicios");
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().hide();
+
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu mimenu){
+        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
+        //Para introducir la opción de búsqueda;
+        MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem opcion_menu){
+        int id=opcion_menu.getItemId();
+        if(id==R.id.configuracion){
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        if(id==R.id.info){
+            Intent i = new Intent(this, Alimentos.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.rece){
+            Intent i = new Intent(this, Recetas.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==android.R.id.home){
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(opcion_menu);
     }
 }

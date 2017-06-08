@@ -33,10 +33,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dietas"
-            android:parentActivityName=".Listadietas"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait" />

@@ -12,9 +12,4 @@
     <item android:id="@+id/rece"
         android:title="Recetas"
         android:icon="@android:drawable/ic_menu_info_details"/>
-    <item android:id="@+id/atras"
-        android:title="Atrás"
-        android:icon="@android:drawable/ic_menu_revert"
-        app:showAsAction="always"
-        android:orderInCategory="1"/>
 </menu>

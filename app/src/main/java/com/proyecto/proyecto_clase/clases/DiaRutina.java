@@ -7,6 +7,7 @@ package com.proyecto.proyecto_clase.clases;
 public class DiaRutina {
     private Integer id;
     private String name;
+    private Rutina rutina;
 
     public Integer getId() {
         return id;
@@ -32,5 +33,5 @@ public class DiaRutina {
         this.rutina = rutina;
     }
 
-    private Rutina rutina;
+
 }

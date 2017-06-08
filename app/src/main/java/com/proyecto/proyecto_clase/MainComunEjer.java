@@ -3,10 +3,15 @@ package com.proyecto.proyecto_clase;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.AsyncTask;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,20 +34,54 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 
-public class MainComunEjer extends AppCompatActivity {
+public class MainComunEjer extends AppCompatActivity{
     public String username;
     public String password;
     public String id;
     public Ejercicios ejercicio;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_comun_ejer);
-        Intent i =getIntent();
+        Intent i = getIntent();
         username = i.getStringExtra("username");
         password = i.getStringExtra("password");
         id = i.getStringExtra("id");
 
+        toolbar=(Toolbar)findViewById(R.id.tool_bar);
+        //Para activar el toolbar como barra de herramientas:
+        setSupportActionBar(toolbar);
+        //Para poner el título al toolbar:
+        getSupportActionBar().setTitle("otro");
+        //boton de atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Para incluir la opción de búsqueda:
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu mimenu){
+        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
+        //Para introducir la opción de búsqueda;
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem opcion_menu){
+        int id=opcion_menu.getItemId();
+        if(id==R.id.configuracion){
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        if(id==R.id.info){
+            Intent i = new Intent(this, Alimentos.class);
+            startActivity(i);
+            return true;
+        }
+
+        if(id==android.R.id.home){
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(opcion_menu);
     }
 
     @Override
@@ -91,7 +130,7 @@ public class MainComunEjer extends AppCompatActivity {
             TextView nombre =(TextView) findViewById(R.id.nombre);
             TextView descripcion =(TextView) findViewById(R.id.descripcion);
             Rect rect = new Rect(imagen.getLeft(), imagen.getTop(), imagen.getRight(), imagen.getBottom());
-            imagen.setImageUrl(ruta,rect);
+            imagen.setImageUrl(ruta ,rect);
             nombre.setText(ejercicio.getName());
             descripcion.setText(ejercicio.getDescripcion());
 

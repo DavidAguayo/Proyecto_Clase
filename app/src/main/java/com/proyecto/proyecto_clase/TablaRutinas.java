@@ -3,7 +3,6 @@ package com.proyecto.proyecto_clase;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,21 +10,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
-import com.proyecto.proyecto_clase.adapters.RutinasAdapter;
 import com.proyecto.proyecto_clase.clases.DiaRutina;
-import com.proyecto.proyecto_clase.clases.Rutina;
 
 import org.springframework.http.HttpAuthentication;
 import org.springframework.http.HttpBasicAuthentication;
@@ -38,14 +31,13 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 /**
  * Created by jorge.sanchez on 06/06/2017.
  */
 
-public class TablaRutinas extends AppCompatActivity implements SearchView.OnQueryTextListener{
+public class TablaRutinas extends AppCompatActivity{
     private Toolbar toolbar;
     public String username;
     public String password;
@@ -67,8 +59,10 @@ public class TablaRutinas extends AppCompatActivity implements SearchView.OnQuer
         setSupportActionBar(toolbar);
         //Para poner el título al toolbar:
         getSupportActionBar().setTitle("Calendario");
-        //Para incluir la opción de búsqueda:
-        SearchView bs = (SearchView) findViewById(R.id.menu_buscar);
+        //boton de atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
     }
     @Override
@@ -79,11 +73,10 @@ public class TablaRutinas extends AppCompatActivity implements SearchView.OnQuer
     //metodos para implementar el menu
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
         //Para introducir la opción de búsqueda;
         MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
-        SearchView searchView =(SearchView) MenuItemCompat.getActionView(menuItem);
-        searchView.setOnQueryTextListener(this);
+
         return true;
     }
     @Override
@@ -103,31 +96,13 @@ public class TablaRutinas extends AppCompatActivity implements SearchView.OnQuer
             startActivity(i);
             return true;
         }
-        if(id==R.id.atras){
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+        if(id==android.R.id.home){
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(opcion_menu);
     }
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        //newText = newText.toLowerCase();
-        //ArrayList<Dieta> newList = new ArrayList<>();
-        //for(Dieta dietas : items)
-        //{
-        //    String name = dietas.getName();
-        //    if(name.contains(newText)){
-        //        newList.add(dietas);
-        //    }
-        //}
-        //dietasAdapter.setFilter(newList);
-        return false;
-    }
+
 
     public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         public SampleFragmentPagerAdapter(FragmentManager fm) {
