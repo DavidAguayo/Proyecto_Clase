@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         password = i.getStringExtra("password");
         Button button;
         Button button2;
-        Button login;
         button = (Button)findViewById(R.id.DIETAS);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,13 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        login = (Button)findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
