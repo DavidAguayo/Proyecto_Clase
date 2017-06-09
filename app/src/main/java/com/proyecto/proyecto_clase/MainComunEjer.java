@@ -53,7 +53,7 @@ public class MainComunEjer extends AppCompatActivity{
         //Para activar el toolbar como barra de herramientas:
         setSupportActionBar(toolbar);
         //Para poner el título al toolbar:
-        getSupportActionBar().setTitle("otro");
+
         //boton de atras
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //Para incluir la opción de búsqueda:
@@ -133,6 +133,7 @@ public class MainComunEjer extends AppCompatActivity{
             imagen.setImageUrl(ruta ,rect);
             nombre.setText(ejercicio.getName());
             descripcion.setText(ejercicio.getDescripcion());
+            getSupportActionBar().setTitle(ejercicio.getName());
 
         }
 
