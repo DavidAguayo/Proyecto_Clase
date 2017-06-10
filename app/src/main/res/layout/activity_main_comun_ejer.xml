@@ -23,75 +23,75 @@
         android:layout_height="match_parent"
         android:paddingTop="70dp">
 
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        card_view:cardCornerRadius="2dp"
-        card_view:cardUseCompatPadding="true">
-
-        <RelativeLayout
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardUseCompatPadding="true">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/nombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="casual"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="18sp"
-                    android:textStyle="normal|bold" />
-
-                <com.github.snowdream.android.widget.SmartImageView
-                    android:id="@+id/img"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_weight="0.63"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:scaleType="centerCrop" />
+                android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="3dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/descripcion"
+                        android:id="@+id/nombre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="casual"
                         android:gravity="center"
                         android:text="TextView"
-                        android:textAlignment="inherit"
+                        android:textAlignment="center"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="18sp"
                         android:textStyle="normal|bold" />
+
+                    <com.github.snowdream.android.widget.SmartImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="0.63"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/descripcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="casual"
+                            android:gravity="center"
+                            android:text="TextView"
+                            android:textAlignment="inherit"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:textStyle="normal|bold" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
-
-            </LinearLayout>
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 
 </RelativeLayout>
