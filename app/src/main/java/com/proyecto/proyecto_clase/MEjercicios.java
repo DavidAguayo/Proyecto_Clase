@@ -68,9 +68,7 @@ public class MEjercicios extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
-        //Para introducir la opción de búsqueda;
-        MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
+        getMenuInflater().inflate(R.menu.menu_inicio, mimenu);
         return true;
     }
     @Override
@@ -78,16 +76,6 @@ public class MEjercicios extends AppCompatActivity {
         int id=opcion_menu.getItemId();
         if(id==R.id.configuracion){
             startActivity(new Intent(this, SettingsActivity.class));
-            return true;
-        }
-        if(id==R.id.info){
-            Intent i = new Intent(this, Alimentos.class);
-            startActivity(i);
-            return true;
-        }
-        if(id==R.id.rece){
-            Intent i = new Intent(this, Recetas.class);
-            startActivity(i);
             return true;
         }
         if(id==android.R.id.home){

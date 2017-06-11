@@ -60,8 +60,7 @@ public class MainComunEjer extends AppCompatActivity{
     }
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
-        //Para introducir la opción de búsqueda;
+        getMenuInflater().inflate(R.menu.menu_inicio, mimenu);
         return true;
     }
     @Override
@@ -71,12 +70,6 @@ public class MainComunEjer extends AppCompatActivity{
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
-        if(id==R.id.info){
-            Intent i = new Intent(this, Alimentos.class);
-            startActivity(i);
-            return true;
-        }
-
         if(id==android.R.id.home){
             finish();
             return true;
