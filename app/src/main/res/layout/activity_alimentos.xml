@@ -1,253 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_alimentos"
+    android:id="@+id/activity_lista_dietas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.proyecto.proyecto_clase.Alimentos"
-    android:orientation="vertical">
+    android:paddingTop="0dp"
+    tools:context="com.proyecto.proyecto_clase.Alimentos">
     <!--Para incluir el toolbar-->
     <include layout="@layout/tool_bar" android:id="@+id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"></include>
 
-    <Button
-        android:text="Guardar información"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/guardarInfo"
-        android:textAppearance="@android:style/TextAppearance.Material.Widget.ActionMode.Title" />
+        android:layout_height="match_parent"
+        android:paddingTop="56dp">
 
-    <TabHost android:id="@android:id/tabhost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fillViewport="false">
+        </android.support.v7.widget.RecyclerView>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+    </LinearLayout>
 
-                    <TabWidget android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@android:id/tabs" />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <FrameLayout android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@android:id/tabcontent" >
-
-                <LinearLayout android:id="@+id/tab1"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                    <android.support.v4.widget.NestedScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical" >
-
-                            <TextView
-                                android:text="Verduras"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/textView"
-                                android:textSize="30sp"
-                                android:fontFamily="casual"
-                                android:textStyle="normal|bold"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Acedera"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch1"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-
-                            <Switch
-                                android:text="Acelga"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch2"
-                                android:layout_weight="1"
-                                android:fontFamily="casual"
-                                android:textSize="18sp"
-                                android:checked="true" />
-
-                            <Switch
-                                android:text="Achicoria"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch3"
-                                android:layout_weight="1"
-                                android:fontFamily="casual"
-                                android:textSize="18sp"
-                                android:checked="true" />
-
-                            <Switch
-                                android:text="Achicoria de Bruselas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch4"
-                                android:layout_weight="1"
-                                android:fontFamily="casual"
-                                android:textSize="18sp"
-                                android:checked="true" />
-
-                            <Switch
-                                android:text="Aguaturma"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch5"
-                                android:layout_weight="1"
-                                android:fontFamily="casual"
-                                android:textSize="18sp"
-                                android:checked="true" />
-
-                            <Switch
-                                android:text="Ají"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/switch6"
-                                android:layout_weight="1"
-                                android:fontFamily="casual"
-                                android:textSize="18sp"
-                                android:checked="true" />
-
-
-                        </LinearLayout>
-                    </android.support.v4.widget.NestedScrollView>
-                </LinearLayout>
-
-                <LinearLayout android:id="@+id/tab2"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                    <android.support.v4.widget.NestedScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical" >
-
-                            <TextView
-                                android:text="Frutas"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/textView2"
-                                android:textSize="30sp"
-                                android:fontFamily="casual"
-                                android:textStyle="normal|bold"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:text="Aguacate"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas1"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Albaricoque"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas2"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Almendra"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas3"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Arándano"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas4"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Cacahuete"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas5"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Carambola"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas6"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Castaña"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas7"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                            <Switch
-                                android:text="Cereza"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/frutas8"
-                                android:layout_weight="1"
-                                android:textSize="18sp"
-                                android:fontFamily="casual"
-                                android:checked="true" />
-                        </LinearLayout>
-                    </android.support.v4.widget.NestedScrollView>
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/prueba"
-        android:layout_weight="1" />
-
-</LinearLayout>
+</RelativeLayout>

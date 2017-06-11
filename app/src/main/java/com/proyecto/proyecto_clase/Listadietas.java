@@ -101,11 +101,15 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         }
         if(id==R.id.info){
             Intent i = new Intent(this, Alimentos.class);
+            i.putExtra("username", username);
+            i.putExtra("password", password);
             startActivity(i);
             return true;
         }
         if(id==R.id.rece){
             Intent i = new Intent(this, Recetas.class);
+            i.putExtra("username", username);
+            i.putExtra("password", password);
             startActivity(i);
             return true;
         }

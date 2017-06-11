@@ -37,18 +37,18 @@ public class AlimentosAdapter extends RecyclerView.Adapter<AlimentosAdapter.View
 
     @Override
     public AlimentosAdapter.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
-       final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.alimento_item,parent,false);
+        final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.alimento_item,parent,false);
         AlimentosAdapter.ViewHolder vh = new AlimentosAdapter.ViewHolder(v);
         return vh;
     }
     @Override
     public void onBindViewHolder(AlimentosAdapter.ViewHolder holder, int position) {
-            Alimento comida = comidasList.get(position);
-            holder.nombreAlimento.setText(String.valueOf(comida.getName()));
-            if(position==0){
-                holder.nombreAlimento.setTextAlignment(TEXT_ALIGNMENT_CENTER);
-                holder.nombreAlimento.setTextSize(18);
-            }
+        Alimento comida = comidasList.get(position);
+        holder.nombreAlimento.setText(String.valueOf(comida.getName()));
+        if(position==0){
+            holder.nombreAlimento.setTextAlignment(TEXT_ALIGNMENT_CENTER);
+            holder.nombreAlimento.setTextSize(18);
+        }
     }
     @Override
     public int getItemCount() {
