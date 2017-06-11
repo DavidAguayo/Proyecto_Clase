@@ -2,8 +2,8 @@ package com.proyecto.proyecto_clase;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,10 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.proyecto.proyecto_clase.adapters.EjerciciosAdapter;
 import com.proyecto.proyecto_clase.clases.DiaEjercicios;
 import com.proyecto.proyecto_clase.clases.Ejercicios;
-import com.proyecto.proyecto_clase.clases.EjerciciosGrupo;
 
 import org.springframework.http.HttpAuthentication;
 import org.springframework.http.HttpBasicAuthentication;
@@ -31,25 +31,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Created by Jorge on 08/06/2017.
+ * Created by jorge.sanchez on 06/06/2017.
  */
 
-public class Listagrupos extends Fragment {
+public class ejerciciosFragment extends Fragment {
+    //Variables pra lo del recycler view
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
     EjerciciosAdapter ejerciciosAdapter;
-    public ArrayList<Ejercicios> EjerciciosList = new ArrayList<>();
-    public EjerciciosGrupo[] ejerciciosGruposArray;
     public String username;
     public String password;
     public String id;
+    public DiaEjercicios[] diaEjerciciosArray;
+    public ArrayList<Ejercicios> EjerciciosList = new ArrayList<>();
 
-    public static Listagrupos newInstance(String username, String password, String id) {
+
+    public static ejerciciosFragment newInstance(String username, String password, String id) {
         Bundle args = new Bundle();
         args.putString("id", id);
         args.putString("username",username);
         args.putString("password",password);
-        Listagrupos fragment = new Listagrupos();
+        ejerciciosFragment fragment = new ejerciciosFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,7 +61,10 @@ public class Listagrupos extends Fragment {
         username = getArguments().getString("username");
         password = getArguments().getString("password");
         id = getArguments().getString("id");
+
     }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.lista_ejercicios, container, false);
@@ -68,11 +73,14 @@ public class Listagrupos extends Fragment {
         return view;
     }
 
+
+
+    //peticion Rest
     private class FetchSecuredResourceTask extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... params) {
-            final String url = "http://80.29.167.245:8520/ejerciciosGrupo/buscarPorIdGrupo";
+                final String url = "http://80.29.167.245:8520/diaEjercicios/buscarPorIdDia";
 
             // Populate the HTTP Basic Authentitcation header with the username and password
             HttpAuthentication authHeader = new HttpBasicAuthentication(username, password);
@@ -83,13 +91,13 @@ public class Listagrupos extends Fragment {
             // Create a new RestTemplate instance
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+
             try {
                 // Make the network request
-                ResponseEntity<EjerciciosGrupo[]> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(requestHeaders), EjerciciosGrupo[].class);
-                ejerciciosGruposArray = response.getBody();
-
-                for(int i = 0 ; i < ejerciciosGruposArray.length ; i++){
-                    EjerciciosList.add(ejerciciosGruposArray[i].getEjercicio());
+                ResponseEntity<DiaEjercicios[]> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(requestHeaders), DiaEjercicios[].class);
+                diaEjerciciosArray = response.getBody();
+                for(int i = 0 ; i < diaEjerciciosArray.length ; i++){
+                    EjerciciosList.add(diaEjerciciosArray[i].getEjercicio());
                 }
                 return "SI";
             } catch (HttpClientErrorException e) {
@@ -119,7 +127,7 @@ public class Listagrupos extends Fragment {
                 @Override
                 public void onItemClick(View view, int position) {
                     Intent intent = new Intent(getActivity(), MainComunEjer.class);
-                    intent.putExtra("id", EjerciciosList.get(position).getId().toString());
+                    intent.putExtra("id",EjerciciosList.get(position).getId().toString());
                     intent.putExtra("username", username);
                     intent.putExtra("password", password);
                     startActivity(intent);
@@ -128,5 +136,4 @@ public class Listagrupos extends Fragment {
 
         }
     }
-
 }

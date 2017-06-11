@@ -2,7 +2,6 @@ package com.proyecto.proyecto_clase;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,8 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
-import com.proyecto.proyecto_clase.clases.DiaRutina;
-import com.proyecto.proyecto_clase.clases.EjerciciosGrupo;
+import com.proyecto.proyecto_clase.clases.Ejercicios;
 import com.proyecto.proyecto_clase.clases.GrupoMuscular;
 
 import org.springframework.http.HttpAuthentication;
@@ -31,6 +29,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class MEjercicios extends AppCompatActivity {
@@ -40,7 +39,7 @@ public class MEjercicios extends AppCompatActivity {
     public String username;
     public String password;
     public String id;
-
+    public ArrayList<Ejercicios> ejerciciosArrayList = new ArrayList<>();
     public GrupoMuscular[] grupoArray;
 
     @Override
@@ -51,6 +50,8 @@ public class MEjercicios extends AppCompatActivity {
         Intent i = getIntent();
         username = i.getStringExtra("username");
         password = i.getStringExtra("password");
+        ejerciciosArrayList = (ArrayList<Ejercicios>) i.getSerializableExtra("ejercicios");
+
         id = i.getStringExtra("id");
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
@@ -97,7 +98,7 @@ public class MEjercicios extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return Listagrupos.newInstance(username,password,grupoArray[position].getId().toString());
+            return gruposFragment.newInstance(username,password,grupoArray[position].getId().toString());
         }
 
         @Override
