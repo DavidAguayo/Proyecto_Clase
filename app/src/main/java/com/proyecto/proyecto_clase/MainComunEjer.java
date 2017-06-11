@@ -48,7 +48,6 @@ public class MainComunEjer extends AppCompatActivity{
         username = i.getStringExtra("username");
         password = i.getStringExtra("password");
         id = i.getStringExtra("id");
-
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
         //Para activar el toolbar como barra de herramientas:
         setSupportActionBar(toolbar);
