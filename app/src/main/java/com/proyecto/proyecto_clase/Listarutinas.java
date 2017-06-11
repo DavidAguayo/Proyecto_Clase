@@ -81,7 +81,7 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        getMenuInflater().inflate(R.menu.menu_ruti, mimenu);
         //Para introducir la opción de búsqueda;
         MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
         SearchView searchView =(SearchView) MenuItemCompat.getActionView(menuItem);
@@ -95,16 +95,7 @@ public class Listarutinas extends AppCompatActivity implements SearchView.OnQuer
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
-        if(id==R.id.info){
-            Intent i = new Intent(this, Alimentos.class);
-            startActivity(i);
-            return true;
-        }
-        if(id==R.id.rece){
-            Intent i = new Intent(this, Recetas.class);
-            startActivity(i);
-            return true;
-        }
+
         if(id==android.R.id.home){
             finish();
             return true;

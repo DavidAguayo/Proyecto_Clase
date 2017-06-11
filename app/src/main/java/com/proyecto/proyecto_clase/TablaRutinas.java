@@ -71,7 +71,7 @@ public class TablaRutinas extends AppCompatActivity{
     //metodos para implementar el menu
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_sin_buscador, mimenu);
+        getMenuInflater().inflate(R.menu.menu_ruti, mimenu);
         //Para introducir la opción de búsqueda;
         MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
 
@@ -84,16 +84,7 @@ public class TablaRutinas extends AppCompatActivity{
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
-        if(id==R.id.info){
-            Intent i = new Intent(this, Alimentos.class);
-            startActivity(i);
-            return true;
-        }
-        if(id==R.id.rece){
-            Intent i = new Intent(this, Recetas.class);
-            startActivity(i);
-            return true;
-        }
+
         if(id==android.R.id.home){
             finish();
             return true;
