@@ -135,6 +135,7 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
             if(name.contains(newText)){
                 newList.add(dietas);
                 aux.add(dietas);
+                filtro=true;
             }
         }
         dietasAdapter.setFilter(newList);
