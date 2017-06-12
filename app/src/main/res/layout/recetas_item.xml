@@ -37,6 +37,14 @@
                     android:textAlignment="textStart"
                     android:padding="@dimen/appbar_padding_top"
                     android:paddingBottom="@dimen/appbar_padding_top" />
+                <Button
+                    android:text="SEGUIR LEYENDO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button"
+                    android:background="@color/colorAccent"
+                    android:padding="8dp"
+                    android:layout_marginLeft="8dp" />
 
                 <ImageView
                     android:layout_width="match_parent"

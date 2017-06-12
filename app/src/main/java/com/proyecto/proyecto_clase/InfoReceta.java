@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.transition.Explode;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class InfoReceta extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class InfoReceta extends AppCompatActivity {
         setContentView(R.layout.activity_info_receta);
 
         TextView t1 = (TextView) findViewById(R.id.elaboracion) ;
+        ImageView i1 = (ImageView)findViewById(R.id.plato);
 
         Intent i = getIntent();
         String numero = i.getStringExtra("numero");
@@ -26,6 +28,7 @@ public class InfoReceta extends AppCompatActivity {
         String nombre = i.getStringExtra("nombre");
 
         t1.setText(ela);
+        i1.setImageResource(imagen);
 
         //Para incluir el Toolbar:
         toolbar=(Toolbar)findViewById(R.id.tool_bar);
