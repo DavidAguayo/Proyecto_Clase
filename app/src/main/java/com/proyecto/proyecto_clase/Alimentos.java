@@ -172,46 +172,81 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
                 @Override
                 public void onItemClick(View view, int position) {
                     Switch aSwitch = (Switch)findViewById(R.id.activado);
-                    if(alimentosList.get(position).getDescripcion().equalsIgnoreCase("Activado")){
-                        id = alimentosList.get(position).getId().toString();
-                        Alimento mLog = new Alimento();
-                        mLog.setId(Integer.parseInt(id));
-                        mLog.setName(alimentosList.get(position).getName());
-                        mLog.setTipo(alimentosList.get(position).getTipo());
-                        mLog.setDescripcion("Desactivado");
-                        alimentosList.set(position, mLog);
-                        //aux.clear();
-                        ArrayList<Alimento> newList = new ArrayList<>();
-                        for(Alimento alimento : alimentosList)
-                        {
-                            newList.add(alimento);
-                            //aux.add(alimento);
-                        }
-                        alimentos.setFilter(newList);
-                        estado="Desactivado";
+                    if(!filtro) {
+                        if (alimentosList.get(position).getDescripcion().equalsIgnoreCase("Activado")) {
+                            id = alimentosList.get(position).getId().toString();
+                            Alimento mLog = new Alimento();
+                            mLog.setId(Integer.parseInt(id));
+                            mLog.setName(alimentosList.get(position).getName());
+                            mLog.setTipo(alimentosList.get(position).getTipo());
+                            mLog.setDescripcion("Desactivado");
+                            alimentosList.set(position, mLog);
+                            //aux.clear();
+                            ArrayList<Alimento> newList = new ArrayList<>();
+                            for (Alimento alimento : alimentosList) {
+                                newList.add(alimento);
+                                //aux.add(alimento);
+                            }
+                            alimentos.setFilter(newList);
+                            estado = "Desactivado";
 
-                    }else{
-                        id = alimentosList.get(position).getId().toString();
-                        Alimento mLog = new Alimento();
-                        mLog.setId(Integer.parseInt(id));
-                        mLog.setName(alimentosList.get(position).getName());
-                        mLog.setTipo(alimentosList.get(position).getTipo());
-                        mLog.setDescripcion("Activado");
-                        alimentosList.set(position, mLog);
-                        //aux.clear();
-                        ArrayList<Alimento> newList = new ArrayList<>();
-                        for(Alimento alimento : alimentosList)
-                        {
-                            newList.add(alimento);
-                            //aux.add(alimento);
+                        } else {
+                            id = alimentosList.get(position).getId().toString();
+                            Alimento mLog = new Alimento();
+                            mLog.setId(Integer.parseInt(id));
+                            mLog.setName(alimentosList.get(position).getName());
+                            mLog.setTipo(alimentosList.get(position).getTipo());
+                            mLog.setDescripcion("Activado");
+                            alimentosList.set(position, mLog);
+                            //aux.clear();
+                            ArrayList<Alimento> newList = new ArrayList<>();
+                            for (Alimento alimento : alimentosList) {
+                                newList.add(alimento);
+                                //aux.add(alimento);
+                            }
+                            alimentos.setFilter(newList);
+                            estado = "Activado";
                         }
-                        alimentos.setFilter(newList);
-                        estado="Activado";
+                    }
+                    else{
+                        if (aux.get(position).getDescripcion().equalsIgnoreCase("Activado")) {
+                            id = aux.get(position).getId().toString();
+                            Alimento mLog = new Alimento();
+                            mLog.setId(Integer.parseInt(id));
+                            mLog.setName(aux.get(position).getName());
+                            mLog.setTipo(aux.get(position).getTipo());
+                            mLog.setDescripcion("Desactivado");
+                            aux.set(position, mLog);
+                            //aux.clear();
+                            ArrayList<Alimento> newList = new ArrayList<>();
+                            for (Alimento alimento : aux) {
+                                newList.add(alimento);
+                                //aux.add(alimento);
+                            }
+                            alimentos.setFilter(newList);
+                            estado = "Desactivado";
+
+                        } else {
+                            id = aux.get(position).getId().toString();
+                            Alimento mLog = new Alimento();
+                            mLog.setId(Integer.parseInt(id));
+                            mLog.setName(aux.get(position).getName());
+                            mLog.setTipo(aux.get(position).getTipo());
+                            mLog.setDescripcion("Activado");
+                            aux.set(position, mLog);
+                            //aux.clear();
+                            ArrayList<Alimento> newList = new ArrayList<>();
+                            for (Alimento alimento : aux) {
+                                newList.add(alimento);
+                                //aux.add(alimento);
+                            }
+                            alimentos.setFilter(newList);
+                            estado = "Activado";
+                        }
                     }
                     cambios=true;
                     postData(estado, id);
                     Toast.makeText(Alimentos.this, "ID: "+id, Toast.LENGTH_SHORT).show();
-                    //new AlimentosUpdate.FetchSecuredResourceTask().execute();
                 }
             }));
         }
@@ -222,43 +257,13 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
         Toast.makeText(Alimentos.this, "Estado cambiado", Toast.LENGTH_SHORT).show();
         //alimentosList.clear();
         //new Alimentos.FetchSecuredResourceTask().execute();
-        //Toast.makeText(Alimentos.this, "Estado cambiado2", Toast.LENGTH_SHORT).show();
-
-        /*final String url = "http://80.29.167.245:8520/alimentos/update";
-
-        // Populate the HTTP Basic Authentitcation header with the username and password
-        HttpAuthentication authHeader = new HttpBasicAuthentication(username, password);
-        HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.setAuthorization(authHeader);
-        requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-        requestHeaders.add("name","Gambas");
-        requestHeaders.add("descripcion",estado);
-        requestHeaders.add("tipo","Plato");
-        requestHeaders.add("id",id);
-        // Create a new RestTemplate instance
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-
-        try {
-            // Make the network request
-            ResponseEntity<Alimento[]> request = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<Object>(requestHeaders), Alimento[].class);
-            //alimentosArray = request.getBody();
-            Toast.makeText(Alimentos.this, "Estado cambiado final", Toast.LENGTH_SHORT).show();
-
-        } catch (HttpClientErrorException e) {
-            Log.e("SalasActivity", e.getMessage(), e);
-
-        } catch (Exception e) {
-            Log.e("SalasActivity", e.getMessage(), e);
-
-        }*/
     }
 
 
     //Métodos para el menú
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_en_activity, mimenu);
+        getMenuInflater().inflate(R.menu.menu_ruti, mimenu);
         //Para introducir la opción de búsqueda;
         MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
         SearchView searchView =(SearchView) MenuItemCompat.getActionView(menuItem);
@@ -268,6 +273,10 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
     @Override
     public boolean onOptionsItemSelected(MenuItem opcion_menu){
         int id=opcion_menu.getItemId();
+        if(id==R.id.configuracion){
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
         if(id==android.R.id.home){
             finish();
             return true;

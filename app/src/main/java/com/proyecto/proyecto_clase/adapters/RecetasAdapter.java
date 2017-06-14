@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.proyecto.proyecto_clase.R;
 import com.proyecto.proyecto_clase.models.RecetasLista;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -52,6 +53,13 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
     @Override
     public int getItemCount() {
         return recetasList.size();
+    }
+
+    //Para introducir la opción de búsqueda:
+    public void setFilter(ArrayList<RecetasLista> newList){
+        recetasList = new ArrayList<>();
+        recetasList.addAll(newList);
+        notifyDataSetChanged();
     }
 }
 

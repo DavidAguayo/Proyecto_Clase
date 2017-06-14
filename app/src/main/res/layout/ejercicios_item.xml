@@ -50,12 +50,16 @@
                 </LinearLayout>
 
                 <Button
-                    android:layout_width="41dp"
-                    android:layout_height="34dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/favoritos"
-                    android:background="@android:drawable/btn_star_big_off"
-                    android:gravity="end"
-                    android:onClick="cliclBoton1" />
+                    android:background="@color/colorAccent"
+                    android:text="IR"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:fontFamily="casual"
+                    android:textColor="@color/cardview_dark_background"
+                    android:layout_margin="8dp" />
 
             </LinearLayout>
 
