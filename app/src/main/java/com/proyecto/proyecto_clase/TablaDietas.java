@@ -77,6 +77,8 @@ public class TablaDietas extends AppCompatActivity {
         }
         if(id==R.id.info){
             Intent i = new Intent(this, Alimentos.class);
+            i.putExtra("username", username);
+            i.putExtra("password", password);
             startActivity(i);
             return true;
         }
