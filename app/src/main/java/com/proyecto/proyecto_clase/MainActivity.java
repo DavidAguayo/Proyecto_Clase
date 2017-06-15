@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent i = getIntent();
+        final Intent i = getIntent();
         username = i.getStringExtra("username");
         password = i.getStringExtra("password");
         Button button;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayList<String> datos= new ArrayList<String>();
                 Intent intent = new Intent(MainActivity.this, Listadietas.class);
+                intent.putExtra("datos", datos);
                 intent.putExtra("username", username);
                 intent.putExtra("password", password);
                 startActivity(intent);

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -34,6 +35,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTextListener{
+    //Para realizar el filtro por alimentos:
+    private Button btfiltrar;
+    public ArrayList<String> datos= new ArrayList<String>();
+    public ArrayList<String> desactivados = new ArrayList<>();
+    private Boolean coincide=false;
+
     //Variables pra lo del recycler view
     private RecyclerView drecyclerView;
     private RecyclerView.LayoutManager dLayoutManager;
@@ -79,46 +86,6 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
     }
     //Metodo de metodo asyncrona al servicio rest
     private class FetchSecuredResourceTask extends AsyncTask<Void, Void, String> {
-        /*@Override
-        protected void onPreExecute(){
-            if(cambios){
-                final String url = "http://80.29.167.245:8520/alimentos/update";
-
-                // Populate the HTTP Basic Authentitcation header with the username and password
-                HttpAuthentication authHeader = new HttpBasicAuthentication(username, password);
-                HttpHeaders requestHeaders = new HttpHeaders();
-                requestHeaders.setAuthorization(authHeader);
-                requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-
-                MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-                headers.add("name","Gambas");
-                headers.add("descripcion","Desactivado");
-                headers.add("tipo","Plato");
-                headers.add("id","624");
-                //headers.add("id",id);
-
-
-                // Create a new RestTemplate instance
-                RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                //Toast.makeText(Alimentos.this, "Estado cambiado final", Toast.LENGTH_SHORT).show();
-                try {
-                    // Make the network request
-                    ResponseEntity<Alimento[]> request = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<Object>(headers,requestHeaders), Alimento[].class);
-                    //alimentosArray = request.getBody();
-                    Toast.makeText(Alimentos.this, "Estado cambiado final 2", Toast.LENGTH_SHORT).show();
-                    //return "SI";
-                } catch (HttpClientErrorException e) {
-                    Log.e("SalasActivity", e.getMessage(), e);
-                    //return "NO";
-                } catch (Exception e) {
-                    Log.e("SalasActivity", e.getMessage(), e);
-                    //return "NO";
-                }
-
-                cambios=false;
-            }
-        }*/
         @Override
         protected String doInBackground(Void... params) {
 
@@ -171,7 +138,6 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
             drecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getBaseContext(), new RecyclerItemClickListener.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
-                    Switch aSwitch = (Switch)findViewById(R.id.activado);
                     if(!filtro) {
                         if (alimentosList.get(position).getDescripcion().equalsIgnoreCase("Activado")) {
                             id = alimentosList.get(position).getId().toString();
@@ -185,10 +151,12 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
                             ArrayList<Alimento> newList = new ArrayList<>();
                             for (Alimento alimento : alimentosList) {
                                 newList.add(alimento);
-                                //aux.add(alimento);
                             }
                             alimentos.setFilter(newList);
                             estado = "Desactivado";
+
+                            //Añade el elemento desactivado al ArrayList
+                            desactivados.add(alimentosList.get(position).getName());
 
                         } else {
                             id = alimentosList.get(position).getId().toString();
@@ -202,8 +170,15 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
                             ArrayList<Alimento> newList = new ArrayList<>();
                             for (Alimento alimento : alimentosList) {
                                 newList.add(alimento);
-                                //aux.add(alimento);
                             }
+
+                            //Elimina el elemento desactivado del ArrayList
+                            for(int i=0; i<desactivados.size(); i++){
+                                if(desactivados.get(i).equalsIgnoreCase(alimentosList.get(position).getName())){
+                                    desactivados.remove(i);
+                                }
+                            }
+
                             alimentos.setFilter(newList);
                             estado = "Activado";
                         }
@@ -225,6 +200,8 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
                             }
                             alimentos.setFilter(newList);
                             estado = "Desactivado";
+                            //Añade el elemento desactivado al ArrayList
+                            desactivados.add(alimentosList.get(position).getName());
 
                         } else {
                             id = aux.get(position).getId().toString();
@@ -240,24 +217,23 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
                                 newList.add(alimento);
                                 //aux.add(alimento);
                             }
+                            //Elimina el elemento desactivado del ArrayList
+                            for(int i=0; i<desactivados.size(); i++){
+                                if(desactivados.get(i).equalsIgnoreCase(alimentosList.get(position).getName())){
+                                    desactivados.remove(i);
+                                }
+                            }
                             alimentos.setFilter(newList);
                             estado = "Activado";
                         }
                     }
                     cambios=true;
-                    postData(estado, id);
                     Toast.makeText(Alimentos.this, "ID: "+id, Toast.LENGTH_SHORT).show();
                 }
             }));
         }
     }
 
-    //Método para hacer el POST
-    public void postData(String estado, String id) {
-        Toast.makeText(Alimentos.this, "Estado cambiado", Toast.LENGTH_SHORT).show();
-        //alimentosList.clear();
-        //new Alimentos.FetchSecuredResourceTask().execute();
-    }
 
 
     //Métodos para el menú
@@ -310,24 +286,53 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
     }
 
 
-
-    /*public void Comprobar(){
-        ArrayList<String> datos= new ArrayList<String>();
-        int cnt=0;
-        Switch s1 = (Switch) findViewById(R.id.switch1);
-        Switch s2 = (Switch) findViewById(R.id.switch2);
-        if(!s1.isChecked()){
-            datos.add(String.valueOf(s1.getText()));
-            cnt++;
+    //Método para realizar el filtro
+    public void Comprobar(View view){
+        String[][] dietas={{"39","Gambas","Acelga","Ajo","Alubias","Arroz","Azucar",
+            "Bacalao", "Berza","Cabracho","Calabacin","Cebolla","Esparragos",
+            "Huevo","Guisantes","Lenguado","Lentejas","Judias verdes","Manzana","Merluza","Naranja",
+            "Patata","Pavo","Pimiento","Pollo","Tomate","Champiñones"}, //Dieta Hiperproteica blanda
+                {"88"}, //Dieta liquida
+                {"40","Ajo","Arroz","Azucar","Esparragos",
+                        "Calabacin","Cebolla","Esparragos",
+                        "Huevo","Lenguado","Judias verdes",
+                        "Manzana","Merluza","Naranja",
+                        "Patata","Pollo","Tomate","Champiñones"}, //Proteccion gastrica
+                {"89","Ajo","Alubias","Arroz","Azucar",
+                        "Bacalao", "Berza","Calabacin","Cebolla","Huevo",
+                        "Guisantes","Lenguado","Lentejas","Manzana","Merluza",
+                        "Naranja","Patata","Pollo","Tomate"}, //Sin gluten
+                {"90","Acelga","Ajo","Alubias","Arroz",
+                        "Berza","Brocoli","Calabacin","Cebolla","Esparragos",
+                        "Guisantes","Lentejas","Judias verdes","Patata",
+                        "Pimiento","Tomate"}, //Ovo-lacto
+                {"91","Acelga","Ajo","Alubias","Arroz","Azucar",
+                        "Berza","Cebolla","Esparragos","Huevo","Lenguado",
+                        "Merluza","Patata","Pavo","Pimiento","Tomate","Champiñones"}, //Blanda sin lacteos
+                {"92","Acelga","Ajo","Azucar",
+                        "Bacalao", "Berza","Cabracho","Calabacin","Cebolla",
+                        "Guisantes","Lentejas","Manzana","Merluza","Patata",
+                        "Pimiento","Pollo","Tomate","Champiñones"}}; //Control colesterol
+        //Boton para filtrar
+        btfiltrar=(Button)findViewById(R.id.btfiltrar);
+        if(desactivados.size()>0){
+            for(int i=0; i<dietas.length; i++){
+                for(int a=0; a<dietas[i].length; a++){
+                    for(int e=0; e<desactivados.size(); e++){
+                        if(desactivados.get(e).toLowerCase().equalsIgnoreCase(dietas[i][a].toLowerCase())){
+                            datos.add(dietas[i][0]);
+                        }
+                    }
+                }
+            }
+            Intent intent = new Intent(this, Listadietas.class);
+            intent.putExtra("datos",datos);
+            intent.putExtra("username",username);
+            intent.putExtra("password",password);
+            startActivity(intent);
         }
-        if(!s2.isChecked()){
-            datos.add(String.valueOf(s2.getText()));
-            cnt++;
-        }
-        Intent intent = new Intent(this, Listadietas.class);
-        intent.putExtra("datos",datos);
-        startActivity(intent);
-    }*/
+        finish();
+    }
 }
 
 /*Para hacer lo de quitar las dietas que contengan alimentos desactivados

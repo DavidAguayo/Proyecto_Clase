@@ -95,8 +95,9 @@
             android:name=".MainRun"
             android:label="@string/titulo_main_running"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainDatos"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MainDatos"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TablaDietas"
             android:screenOrientation="portrait" />

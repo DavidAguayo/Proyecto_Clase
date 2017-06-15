@@ -28,13 +28,14 @@
             android:text="PULSE AQUI PARA MOSTRAR DIETAS SIN LOS INGREDIENTES DESACTIVADOS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button2"
+            android:id="@+id/btfiltrar"
             android:fontFamily="casual"
             android:background="@color/background_tab_pressed"
             android:textColor="@color/cardview_dark_background"
             android:layout_margin="8dp"
             android:textSize="14sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:onClick="Comprobar" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view2"

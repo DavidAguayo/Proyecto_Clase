@@ -50,6 +50,7 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
     public Dieta[] dietasArray;
     public ArrayList items;
     public String id;
+    private ArrayList<String> datos;
     private String username;
     private String password;
     private Boolean filtro = false;
@@ -58,6 +59,7 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dietas);
         Intent i = getIntent();
+        datos = i.getStringArrayListExtra("datos");
         username = i.getStringExtra("username");
         password = i.getStringExtra("password");
 
@@ -69,10 +71,6 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         getSupportActionBar().setTitle("Lista de dietas");
         //boton de atras
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //Para incluir la opción de búsqueda:
-        SearchView bs = (SearchView) findViewById(R.id.menu_buscar);
-        RecyclerView rv = (RecyclerView)findViewById(R.id.recycler_view);
-        //rv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listview_array));
     }
     @Override
     protected void onStart() {
@@ -119,6 +117,8 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
         }
         return super.onOptionsItemSelected(opcion_menu);
     }
+
+    //Los siguientes dos métodos sirven para hacer la búsqueda
     @Override
     public boolean onQueryTextSubmit(String query) {
         return false;
@@ -184,7 +184,18 @@ public class Listadietas extends AppCompatActivity implements SearchView.OnQuery
             drecyclerView.setLayoutManager(dLayoutManager);
 
             for(int i =0 ; i<dietasArray.length ; i++){
-                dietasList.add(dietasArray[i]);
+                Boolean esta=false;
+                if(datos.size()>0){
+                    for(int a=0; a<datos.size();a++) {
+                        if(datos.get(a).equalsIgnoreCase(dietasArray[i].getId().toString()))
+                            esta=true;
+                    }
+                    if(esta==false)
+                        dietasList.add(dietasArray[i]);
+                }
+                else{
+                    dietasList.add(dietasArray[i]);
+                }
             }
 
             dietasAdapter = new DietasAdapter(dietasList);
