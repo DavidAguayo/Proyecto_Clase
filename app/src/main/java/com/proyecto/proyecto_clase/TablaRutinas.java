@@ -71,9 +71,9 @@ public class TablaRutinas extends AppCompatActivity{
     //metodos para implementar el menu
     @Override
     public boolean onCreateOptionsMenu(Menu mimenu){
-        getMenuInflater().inflate(R.menu.menu_ruti, mimenu);
+        getMenuInflater().inflate(R.menu.menu_inicio, mimenu);
         //Para introducir la opción de búsqueda;
-        MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
+        //MenuItem menuItem = mimenu.findItem(R.id.menu_buscar);
 
         return true;
     }
