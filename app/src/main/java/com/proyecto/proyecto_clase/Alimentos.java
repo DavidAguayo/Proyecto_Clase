@@ -334,8 +334,3 @@ public class Alimentos extends AppCompatActivity implements SearchView.OnQueryTe
         finish();
     }
 }
-
-/*Para hacer lo de quitar las dietas que contengan alimentos desactivados
-hay que comprobar si un switch está desactivado para introducirlo todo
-en un String y pasarlo al OnCreate de Listadietas.java y comprobarlo
-antes de cargar el recyclerview*/
